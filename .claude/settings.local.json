@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(jekyll -v)"
+      "Bash(jekyll -v)",
+      "Bash(gh auth:*)"
     ],
     "deny": []
   }
