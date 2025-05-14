@@ -1,0 +1,17 @@
+# Jekyll site files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+# Gemfile.lock
+
+# macOS
+.DS_Store
+
+# Editor files
+*.swp
+*~
+.idea/
+.vscode/
+.cursor/
