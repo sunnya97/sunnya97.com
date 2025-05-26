@@ -27,3 +27,20 @@ layout: home
     </div>
   </main>
 </div>
+
+<section class="map-section">
+  <div class="map-grid">
+    <div class="map-tile map-top-left">
+      <img src="/assets/images/sepiamap_topleft.png" alt="Map Top Left">
+    </div>
+    <div class="map-tile map-top-right">
+      <img src="/assets/images/sepiamap_topright.png" alt="Map Top Right">
+    </div>
+    <div class="map-tile map-bottom-left">
+      <img src="/assets/images/sepiamap_bottomleft.png" alt="Map Bottom Left">
+    </div>
+    <div class="map-tile map-bottom-right">
+      <img src="/assets/images/sepiamap_bottomright.png" alt="Map Bottom Right">
+    </div>
+  </div>
+</section>
