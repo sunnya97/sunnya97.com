@@ -47,9 +47,9 @@ title: Investor
         <div class="portfolio-card" data-category="{% for category in investment.categories %}{{ category }}{% unless forloop.last %} {% endunless %}{% endfor %}">
           <div class="card-logo-square" style="background: {{ investment.color | default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}">
             {% if investment.wordmark %}
-              <img src="{{ investment.wordmark }}" alt="{{ investment.name }}" class="card-logo">
+              <img src="{{ investment.wordmark }}" alt="{{ investment.name }}" class="card-logo" style="max-width: {{ investment.logo_size | default: '50%' }}; max-height: {{ investment.logo_size | default: '50%' }};">
             {% elsif investment.logo %}
-              <img src="{{ investment.logo }}" alt="{{ investment.name }}" class="card-logo">
+              <img src="{{ investment.logo }}" alt="{{ investment.name }}" class="card-logo" style="max-width: {{ investment.logo_size | default: '50%' }}; max-height: {{ investment.logo_size | default: '50%' }};">
             {% else %}
               <div class="card-logo-placeholder">{{ investment.name | slice: 0, 2 | upcase }}</div>
             {% endif %}
@@ -203,10 +203,7 @@ title: Investor
 }
 
 .card-logo {
-  max-width: 40%;
-  max-height: 40%;
   object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 .card-logo-placeholder {
