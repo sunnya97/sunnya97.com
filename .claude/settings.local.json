@@ -49,7 +49,13 @@
       "WebFetch(domain:interop.ventures)",
       "WebFetch(domain:www.kava.io)",
       "WebFetch(domain:citadel.one)",
-      "WebFetch(domain:www.utxo.management)"
+      "WebFetch(domain:www.utxo.management)",
+      "WebFetch(domain:cryptologos.cc)",
+      "WebFetch(domain:bitcoin.org)",
+      "WebFetch(domain:www.coingecko.com)",
+      "WebFetch(domain:www.coingecko.com)",
+      "WebFetch(domain:www.coingecko.com)",
+      "WebFetch(domain:www.coingecko.com)"
     ],
     "deny": []
   },
