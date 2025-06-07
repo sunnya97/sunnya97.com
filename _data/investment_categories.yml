@@ -1,0 +1,39 @@
+- name: "AI"
+  description: "Artificial intelligence and machine learning companies"
+  show_filter: true
+
+- name: "Crypto"
+  description: "General cryptocurrency and blockchain projects"
+  show_filter: true
+
+- name: "Bitcoin"
+  description: "Bitcoin-focused projects and infrastructure"
+  show_filter: true
+
+- name: "Cosmos"
+  description: "Projects built on or related to the Cosmos ecosystem"
+  show_filter: true
+
+- name: "Fund"
+  description: "Investment funds and venture capital"
+  show_filter: true
+
+- name: "FinTech"
+  description: "Financial technology companies"
+  show_filter: false
+
+- name: "Education"
+  description: "Educational platforms and initiatives"
+  show_filter: false
+
+- name: "Advisor"
+  description: "Advisory positions and relationships"
+  show_filter: true
+
+- name: "Graveyard"
+  description: "Projects that are no longer active"
+  show_filter: true
+
+- name: "DeFi"
+  description: "Decentralized finance protocols and platforms"
+  show_filter: false

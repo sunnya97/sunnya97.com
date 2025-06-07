@@ -1,0 +1,83 @@
+- name: "Bitcoin"
+  symbol: "BTC"
+  link: "https://bitcoin.org/bitcoin.pdf"
+
+- name: "Osmosis"
+  symbol: "OSMO"
+  link: "https://osmosis.zone/"
+
+- name: "Hyperliquid"
+  symbol: "HYPE"
+  link: "https://hyperfoundation.org/"
+
+- name: "Dogecoin"
+  symbol: "DOGE"
+  link: "https://en.wikipedia.org/wiki/Dogecoin"
+
+- name: "Solana"
+  symbol: "SOL"
+  link: "https://solana.com/"
+
+- name: "Ether"
+  symbol: "ETH"
+  link: "https://ethereum.org/"
+
+- name: "Phala Network"
+  symbol: "PHALA"
+  link: "https://phala.network/"
+
+- name: "MetaDAO"
+  symbol: "META"
+  link: "https://metadao.fi/"
+
+- name: "Zeus"
+  symbol: "ZEUS"
+  link: "https://zeusnetwork.xyz/"
+
+- name: "Cosmos Hub"
+  symbol: "ATOM"
+  link: "https://hub.cosmos.network/"
+
+- name: "Babylon"
+  symbol: "BABY"
+  link: "https://www.babylonchain.io/"
+
+- name: "Akash Network"
+  symbol: "AKT"
+  link: "https://akash.network/"
+
+- name: "Kava Network"
+  symbol: "KAVA"
+  link: "https://www.kava.io/"
+
+- name: "Jupiter"
+  symbol: "JUP"
+  link: "https://jup.ag/"
+
+- name: "LayerZero"
+  symbol: "ZRO"
+  link: "https://layerzero.network/"
+
+- name: "Stargate"
+  symbol: "STG"
+  link: "https://stargate.finance/"
+
+- name: "The Bull Moose"
+  symbol: "BULL"
+  link: "https://x.com/sunnya97/status/1881406425794310514"
+
+- name: "Ion"
+  symbol: "ION"
+  link: "http://ion.wtf/"
+
+- name: "Alex"
+  symbol: "ALEX"
+  link: "https://alexmasmej.com/"
+
+- name: "Bad Kids"
+  symbol: "BAD"
+  link: "https://badkids.com/"
+
+- name: "Mad Scientists"
+  symbol: "MAD"
+  link: "https://www.madscientists.io/"

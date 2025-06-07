@@ -28,19 +28,20 @@ layout: home
   </main>
 </div>
 
-<section class="map-section">
-  <div class="map-grid">
-    <div class="map-tile map-top-left">
-      <img src="/assets/images/sepiamap_topleft.png" alt="Map Top Left">
+<section class="tarot-section">
+  <div class="tarot-grid">
+    <div class="tarot-card">
+      <img src="/assets/images/founder.png" alt="Founder Tarot Card">
     </div>
-    <div class="map-tile map-top-right">
-      <img src="/assets/images/sepiamap_topright.png" alt="Map Top Right">
+    <div class="tarot-card">
+      <img src="/assets/images/adventurer.png" alt="Adventurer Tarot Card">
     </div>
-    <div class="map-tile map-bottom-left">
-      <img src="/assets/images/sepiamap_bottomleft.png" alt="Map Bottom Left">
+    <div class="tarot-card">
+      <img src="/assets/images/investor.png" alt="Investor Tarot Card">
     </div>
-    <div class="map-tile map-bottom-right">
-      <img src="/assets/images/sepiamap_bottomright.png" alt="Map Bottom Right">
+    <div class="tarot-card">
+      <img src="/assets/images/scholar.png" alt="Scholar Tarot Card">
     </div>
   </div>
 </section>
+

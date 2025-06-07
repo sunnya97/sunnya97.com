@@ -1,0 +1,301 @@
+- name: Wispr Flow
+  categories: ["AI"]
+  blurb: "Effortless Voice Dictation"
+  description: "Voice AI technology for seamless human-computer interaction."
+  link: "https://wispr.ai/"
+  featured: false
+
+- name: Flashbots
+  categories: ["Crypto"]
+  blurb: "MEV infrastructure and research"
+  description: "Research and development organization focused on MEV extraction."
+  link: "https://flashbots.net/"
+  logo: "/assets/logos/flashbots-logo-light.svg"
+  featured: true
+
+- name: Taproot Wizards
+  categories: ["Crypto", "Bitcoin"]
+  blurb: "Bitcoin Accelerationism through Memes"
+  description: "Building magical experiences on Bitcoin with Taproot Wizards."
+  link: "https://taprootwizards.com/"
+  featured: false
+
+- name: Babylon
+  categories: ["Crypto", "Bitcoin", "Cosmos", "Advisor"]
+  blurb: "Bitcoin Restaking"
+  description: "Bitcoin staking infrastructure and protocol design for enhanced network security."
+  link: "https://www.babylonchain.io/"
+  featured: false
+
+- name: UTXO Management
+  categories: ["Fund", "Crypto", "Bitcoin"]
+  blurb: "Bitcoin-focused Investment Fund"
+  description: "Investment fund focused on Bitcoin and Bitcoin-related technologies."
+  link: "https://www.utxo.management/"
+  featured: false
+
+- name: Raindrop
+  categories: ["AI"]
+  blurb: "AI monitoring platform"
+  description: "AI-powered analytics platform for data-driven insights."
+  link: "https://www.raindrop.ai/"
+  logo: "/assets/logos/raindrop-logo-dark.svg"
+  wordmark: "/assets/logos/raindrop-wordmark-dark.png"
+  featured: false
+
+- name: daos.fun
+  categories: ["Crypto"]
+  blurb: "DAO management platform"
+  description: "Platform for creating and managing decentralized autonomous organizations."
+  link: "https://www.daos.fun/"
+  logo: "/assets/logos/daos-fun-logo-dark.png"
+  featured: false
+
+- name: Li Finance
+  categories: ["Crypto"]
+  blurb: "Cross-chain bridge aggregator"
+  description: "Cross-chain bridge aggregation protocol for seamless asset transfers."
+  link: "https://li.fi/"
+  featured: false
+
+- name: LayerZero
+  categories: ["Crypto"]
+  blurb: "Omnichain interoperability protocol"
+  description: "Omnichain interoperability protocol connecting all blockchains."
+  link: "https://layerzero.network/"
+  logo: "/assets/logos/layerzero-logo-light.svg"
+  wordmark: "/assets/logos/layerzero-wordmark-light.svg"
+  featured: true
+
+- name: Citrea
+  categories: ["Crypto", "Bitcoin"]
+  blurb: "Bitcoin ZK rollup"
+  description: "Bitcoin's first ZK rollup for scalable Bitcoin applications."
+  link: "https://citrea.xyz/"
+  featured: true
+
+- name: Anoma
+  categories: ["Crypto", "Cosmos"]
+  blurb: "Privacy-centric intents protocol"
+  description: "Intent-centric architecture for private, composable transactions across multiple blockchains."
+  link: "https://anoma.net/"
+  featured: true
+
+- name: Perennial
+  categories: ["Crypto"]
+  blurb: "Purpose-built perps rollup"
+  description: "Decentralized derivatives protocol for synthetic exposure."
+  link: "https://perennial.finance/"
+  featured: false
+
+- name: Keplr
+  categories: ["Crypto", "Cosmos"]
+  blurb: "Interchain wallet"
+  description: "Leading wallet for the interchain ecosystem with advanced IBC support."
+  link: "https://www.keplr.app/"
+  featured: false
+
+- name: Opyn
+  categories: ["Crypto"]
+  blurb: "Uniswap but for perps"
+  description: "DeFi options protocol for hedging and speculation."
+  link: "https://opyn.co/"
+  featured: false
+
+- name: Argus
+  categories: ["Crypto", "Cosmos"]
+  blurb: "Blockchain-native Game Engine"
+  description: "Gaming infrastructure and analytics platform."
+  link: "https://argus.gg/"
+  featured: false
+
+- name: Fei Protocol
+  categories: ["Crypto"]
+  blurb: "Algorithmic stablecoin"
+  description: "Algorithmic stablecoin protocol with novel stability mechanisms."
+  link: "https://fei.money/"
+  featured: false
+
+- name: Akash Network
+  categories: ["Crypto", "Cosmos", "Advisor"]
+  blurb: "Decentralized Cloud Computing"
+  description: "Decentralized cloud computing marketplace and distributed infrastructure platform."
+  link: "https://akash.network/"
+  featured: false
+
+- name: Mercury
+  categories: ["FinTech"]
+  blurb: "Digital banking platform"
+  description: "Digital banking platform for startups and growing businesses."
+  link: "https://mercury.com/"
+  featured: false
+
+- name: Chorus One
+  categories: ["Crypto", "Advisor"]
+  blurb: "Staking Infrastructure Provider"
+  description: "Staking infrastructure and validator operations across multiple proof-of-stake networks."
+  link: "https://www.chorus.one/about/"
+  featured: false
+
+- name: Spruce
+  categories: ["Crypto"]
+  blurb: "Digital Identity Infrastructure"
+  description: "Digital identity infrastructure for user-controlled data."
+  link: "https://www.spruceid.com/"
+  featured: false
+
+- name: Agoric
+  categories: ["Crypto", "Cosmos"]
+  blurb: "JavaScript smart contract platform"
+  description: "JavaScript-based smart contract platform for secure DeFi applications."
+  link: "https://agoric.org/"
+  featured: false
+
+- name: Tower
+  categories: ["Crypto", "Cosmos"]
+  blurb: "Babylon Native DEX"
+  description: "rade smarter, faster, and more securely with the power of Bitcoin-secured Babylon."
+  link: "https://www.tower.fi/"
+  featured: false
+
+- name: Avail
+  categories: ["Crypto"]
+  blurb: "Data Availability Network"
+  description: "Modular blockchain focused on data availability for scalable applications."
+  link: "https://www.availproject.org/"
+  featured: true
+
+- name: Sommelier
+  categories: ["Crypto", "Cosmos"]
+  blurb: "Ethereum DeFi Yield Vaults"
+  description: "Automated DeFi strategies platform built on Cosmos with bi-directional Ethereum integration."
+  link: "https://www.sommelier.finance/"
+  featured: true
+
+- name: Quasar
+  categories: ["Crypto", "Cosmos", "Graveyard"]
+  blurb: "Cosmos DeFi Yield Vaults"
+  description: "Yield optimization protocol for maximizing DeFi returns."
+  link: "https://www.quasar.fi/"
+  featured: false
+
+- name: Commonwealth
+  categories: ["Crypto"]
+  blurb: "Tools for governance and community management"
+  description: "Platform for on-chain governance and community management."
+  link: "https://commonwealth.im/"
+  featured: false
+
+- name: Evmos
+  categories: ["Crypto", "Cosmos", "Graveyard"]
+  blurb: "EVM-compatible Cosmos blockchain"
+  description: "EVM-compatible blockchain bringing Ethereum to the Cosmos ecosystem."
+  link: "https://evmos.org/"
+  featured: false
+
+- name: Stargaze
+  categories: ["Crypto", "Cosmos"]
+  blurb: "Cosmos NFT marketplace"
+  description: "NFT marketplace and infrastructure for the Cosmos ecosystem."
+  link: "https://stargaze.zone/"
+  featured: false
+
+- name: Frachtis
+  categories: ["Fund", "Crypto"]
+  blurb: "Crypto-native pre-seed fund"
+  description: "Early-stage venture capital fund investing in innovative technology companies."
+  link: "https://frachtis.com/"
+  featured: false
+
+- name: Interop Ventures
+  categories: ["Fund", "Crypto", "Cosmos"]
+  blurb: "Interoperability-focused Fund"
+  description: "Venture capital fund specializing in interoperability and cross-chain technologies."
+  link: "https://interop.ventures/"
+  featured: false
+
+- name: Zap
+  categories: ["Crypto"]
+  blurb: "Social Trading Bots"
+  description: "our vision is to enable on-chain discovery and trading on every social platform"
+  link: "https://chronos.fi/"
+  featured: false
+
+- name: Metropolis
+  categories: ["Crypto"]
+  blurb: "Building tools and media for crypto"
+  description: "Governance infrastructure for decentralized organizations."
+  link: "https://www.metropolis.space/"
+  featured: false
+
+- name: Sherlock
+  categories: ["Crypto"]
+  blurb: "Security auditing protocol"
+  description: "Decentralized security auditing protocol for smart contracts."
+  link: "https://www.sherlock.xyz/"
+  wordmark: "/assets/logos/sherlock-wordmark-light.svg"
+  featured: false
+
+- name: Desmos
+  categories: ["Crypto", "Cosmos", "Graveyard"]
+  blurb: "Decentralized social network"
+  description: "Decentralized social network built on Cosmos technology."
+  link: "https://www.desmos.network/"
+  featured: false
+
+- name: Shiftup
+  categories: ["Education", "Graveyard"]
+  blurb: "Physical spaces for personal education journeys"
+  description: "Developer tools and infrastructure for blockchain applications."
+  link: "https://shiftup.tech/"
+  featured: false
+
+- name: Kava Labs
+  categories: ["Crypto", "Cosmos", "Advisor"]
+  blurb: "DeFi Cosmos L1"
+  description: "DeFi lending platform and cross-chain protocol development on Cosmos."
+  link: "https://www.kava.io/"
+  featured: false
+
+- name: Citadel.one
+  categories: ["Crypto", "Advisor"]
+  blurb: "Multi-chain staking platform"
+  description: "Multi-chain staking platform and validator infrastructure for the Cosmos ecosystem."
+  link: "https://citadel.one/"
+  featured: false
+
+- name: Dopp
+  categories: ["Crypto", "Graveyard"]
+  blurb: "DeFi Options Protocol"
+  description: "Next-generation DeFi protocol for advanced financial instruments."
+  link: "https://www.dopp.finance/"
+  wordmark: "/assets/logos/dopp-wordmark-dark.png"
+  featured: false
+
+- name: Epicenter
+  categories: ["Crypto"]
+  blurb: "The OG Crypto Podcast"
+  description: "Epicenter brings you in-depth conversations about the technical, economic and social implications of cryptocurrencies and blockchain technologies."
+  link: "https://www.epicenter.tv/"
+  featured: false
+
+- name: Fiat Lux DAO
+  categories: ["Crypto"]
+  blurb: "Berkeley Alumni DAO"
+  description: "FiatLux is a collective of UC Berkeley alumni that came together over ~48 hours to pool together funds to bid on the first of two Nobel NFTs that UC Berkeley plans to mint, and grew into something much larger: A DAO with the mission of highlighting the importance of science and technology to society, while leveraging the power of crypto to fund breakthrough academic research in novel & more accessible ways."
+  link: "https://fiatlux.mirror.xyz/USuZKjVeYcySoc5m_qzkbqOF1oFLWx_N-7TLXZw1EMc"
+  featured: false
+
+- name: SHL Capital
+  categories: ["Fund"]
+  blurb: "Personal Syndicate of SHL"
+  description: "Angel investment syndicate backing early-stage technology startups."
+  link: "https://angel.co/shl/syndicate"
+  featured: false
+
+- name: Delphi InfiNFT
+  categories: ["Fund", "Crypto"]
+  blurb: "NFT Investment Fund"
+  description: "Investment syndicate focused on NFT and digital collectibles projects."
+  link: "https://syndicate.io/syndicate/delphi_infinft"
+  featured: false
