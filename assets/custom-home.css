@@ -1,25 +1,25 @@
 :root {
   --primary-color: #d4af37;
   --secondary-color: #fff;
+  --text-muted: rgba(255, 255, 255, 0.8);
   --background-color: #000;
   
   /* Layout variables */
   --site-container-width: 1280px;
-  --content-width: 720px;
-  --container-padding: 1rem;
+  --content-width: 52em;
+  --container-padding: 3em;
 }
 
 /* Layout Utility Classes */
 .site-container {
   max-width: var(--site-container-width);
   margin: 0 auto;
-  padding: 0 var(--container-padding);
 }
 
 .content {
   max-width: var(--content-width);
+  width: calc(100% - 6em);
   margin: 0 auto;
-  padding: 0 var(--container-padding);
 }
 
 body {

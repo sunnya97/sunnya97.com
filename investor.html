@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: archetype
 title: Investor
 ---
 
@@ -10,16 +10,15 @@ title: Investor
     <div class="content">
       <h1 class="investor-title">INVESTOR</h1>
       <h2 class="investor-subtitle">I invest in people, ideas, and communities with capital, time, and belief.</h2>
+      <div class="investor-divider">• • •</div>
       <p class="investor-description">
-        I don't invest professionally. I do it to support the people and ideas I believe in. Sometimes that means angel checks. Sometimes it means advising. Occasionally, I back other fund managers I trust. I'm not optimizing for returns. I'm just backing what I want to see exist. Nothing here is financial advice.
+        I don't invest professionally. I do it to back people or ideas I want to support. Sometimes that means angel checks. Sometimes it means advising. Occasionally, I back other fund managers I trust. I'm not optimizing for returns. I'm just backing what I want to see exist. Nothing here is financial advice.
       </p>
     </div>
   </section>
 
   <section class="card-portfolio-section">
-    <div class="category-description">
-      <h2 id="category-quote" class="section-title">{% for category in site.data.investment_categories %}{% if category.name == "All" %}{{ category.description }}{% endif %}{% endfor %}</h2>
-    </div>
+    <h2 class="section-title">{% for category in site.data.investment_categories %}{% if category.name == "All" %}{{ category.description }}{% endif %}{% endfor %}</h2>
     
     <div class="card-filter-tabs">
       <button class="card-filter-btn active" data-filter="all">All</button>
@@ -28,6 +27,10 @@ title: Investor
           <button class="card-filter-btn" data-filter="{{ category.name }}">{{ category.name }}</button>
         {% endif %}
       {% endfor %}
+    </div>
+    
+    <div class="category-description collapsed">
+      <p id="category-quote" class="category-subtitle" style="opacity: 0; max-height: 0; margin: 0;"></p>
     </div>
     
     <div class="portfolio-cards-grid">
@@ -54,8 +57,8 @@ title: Investor
   </section>
 
   <section class="token-portfolio-section">
-    <h2 class="section-title">Token Portfolio</h2>
-    <p class="section-subtitle">I back protocols, not just companies.</p>
+    <h2 class="section-title">Token Holdings</h2>
+    <p class="section-subtitle">I like the coin. Public tokens I've accumulated outside of private investment.</p>
     
     <div class="token-cards-grid">
       {% for token in site.data.tokens %}
@@ -77,9 +80,6 @@ title: Investor
       {% endfor %}
     </div>
     
-    <div class="disclaimer">
-      <p>⚠️ This is not investment advice. Just what I believe in.</p>
-    </div>
   </section>
 </div>
 
@@ -91,8 +91,21 @@ title: Investor
 }
 
 .investor-hero {
-  padding: 4rem 0 2rem 0;
+  padding: 4rem 0 1rem 0;
   text-align: center;
+}
+
+.investor-hero .investor-description {
+  text-align: left;
+  max-width: none;
+}
+
+.investor-divider {
+  color: var(--text-muted);
+  text-align: center;
+  margin: 1.5rem 0 2.5rem 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
 }
 
 .investor-title {
@@ -107,7 +120,7 @@ title: Investor
   font-size: 1.6rem;
   font-weight: 300;
   font-style: italic;
-  margin: 0 0 3.5rem 0;
+  margin: 0 0 2.5rem 0;
   color: var(--secondary-color);
   line-height: 1.5;
   letter-spacing: 0.3px;
@@ -116,11 +129,10 @@ title: Investor
 .investor-description {
   font-size: 1.2rem;
   line-height: 1.7;
-  color: var(--secondary-color);
+  color: var(--text-muted);
   font-weight: 400;
   text-align: left;
   letter-spacing: 0.2px;
-  opacity: 0.95;
 }
 
 .section-title {
@@ -132,11 +144,31 @@ title: Investor
 }
 
 .section-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--secondary-color);
+  color: var(--text-muted);
   font-weight: normal;
+  font-style: italic;
+}
+
+.category-description {
+  transition: margin-bottom 0.3s ease;
+}
+
+.category-description.collapsed {
+  margin-bottom: 0;
+}
+
+.category-subtitle {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+  color: var(--text-muted);
+  font-weight: normal;
+  font-style: italic;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .card-portfolio-section {
@@ -234,14 +266,12 @@ title: Investor
 }
 
 .token-portfolio-section {
-  padding: 6rem 4rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 2rem 0 6rem 0;
 }
 
 .token-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -264,8 +294,8 @@ title: Investor
 }
 
 .token-logo-circle {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -398,6 +428,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const cardFilterBtns = document.querySelectorAll('.card-filter-btn');
   const portfolioCards = document.querySelectorAll('.portfolio-card');
   const categoryQuote = document.getElementById('category-quote');
+  const categoryDescription = document.querySelector('.category-description');
   
   // Category descriptions data - generated from Jekyll YAML
   const categoryDescriptions = {
@@ -415,10 +446,21 @@ document.addEventListener('DOMContentLoaded', function() {
       
       const filter = this.getAttribute('data-filter');
       
-      // Update category description
-      const filterKey = filter === 'all' ? 'All' : filter;
-      if (categoryDescriptions[filterKey]) {
-        categoryQuote.textContent = categoryDescriptions[filterKey];
+      // Update category description with smooth animation
+      if (filter === 'all') {
+        categoryQuote.style.opacity = '0';
+        categoryQuote.style.maxHeight = '0';
+        categoryQuote.style.margin = '0';
+        categoryDescription.classList.add('collapsed');
+      } else {
+        const filterKey = filter;
+        if (categoryDescriptions[filterKey]) {
+          categoryQuote.textContent = categoryDescriptions[filterKey];
+          categoryQuote.style.opacity = '1';
+          categoryQuote.style.maxHeight = '50px';
+          categoryQuote.style.margin = '1rem 0 2rem 0';
+          categoryDescription.classList.remove('collapsed');
+        }
       }
       
       // FLIP animation: First - record initial positions

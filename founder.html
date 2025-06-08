@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: archetype
 title: Founder
 ---
 
@@ -7,12 +7,73 @@ title: Founder
   {% include header.html %}
 
   <section class="founder-hero">
-    <div class="founder-hero-content">
+    <div class="content">
       <h1 class="founder-title">FOUNDER</h1>
       <h2 class="founder-subtitle">I create things: companies, products, and movements.</h2>
+      <div class="founder-divider">• • •</div>
       <p class="founder-description">
         I like starting from zero—when nothing exists yet, but something feels inevitable. From protocols like Osmosis to experiments like Polaris, I build systems that unlock agency, resilience, and emergence.
       </p>
+    </div>
+  </section>
+
+  <section class="interactive-projects-section">
+    <div class="content">
+      <h2 class="projects-title">Projects I've Built</h2>
+      
+      <div class="projects-showcase">
+        <!-- Large expanded card -->
+        <div class="expanded-card" id="expanded-card">
+          <div class="expanded-content">
+            <h3 class="expanded-project-name" id="expanded-name">Osmosis</h3>
+            
+            <div class="narrative-content" id="narrative-content">
+              <div class="narrative-text" id="narrative-text">
+                <p>Osmosis began as an idea to solve liquidity fragmentation across the Cosmos ecosystem. While other chains were building isolated AMMs, we envisioned a protocol that could unify liquidity across the entire interchain.</p>
+                
+                <p>The technical challenge was immense—creating customizable liquidity pools that could handle cross-chain assets while maintaining security and efficiency. We pioneered novel concepts like superfluid staking and concentrated liquidity that have since influenced the broader DeFi space.</p>
+                
+                <p>What started as a technical experiment has grown into one of the largest DEXs in Cosmos, facilitating billions in trading volume and becoming the liquidity hub for the Internet of Blockchains.</p>
+              </div>
+              
+              <div class="milestones" id="milestones">
+                <h4>Key Milestones</h4>
+                <ul>
+                  <li>2021: Protocol launch and initial liquidity mining</li>
+                  <li>2022: Superfluid staking implementation</li>
+                  <li>2023: $1B+ in total value locked</li>
+                  <li>2024: Cross-chain expansion beyond Cosmos</li>
+                </ul>
+              </div>
+              
+              <blockquote class="personal-quote" id="personal-quote">
+                "Building Osmosis taught me that the most impactful protocols emerge from solving real problems that other teams are avoiding because they're too hard."
+              </blockquote>
+            </div>
+            
+            <a href="https://osmosis.zone" class="view-project-btn" id="expanded-link">View Project →</a>
+          </div>
+        </div>
+        
+        <!-- Small cards row -->
+        <div class="small-cards-row">
+          <div class="small-card" data-project="polaris">
+            <h4 class="small-project-name">Polaris</h4>
+          </div>
+          
+          <div class="small-card" data-project="sikka">
+            <h4 class="small-project-name">Sikka</h4>
+          </div>
+          
+          <div class="small-card" data-project="cosmos">
+            <h4 class="small-project-name">Cosmos</h4>
+          </div>
+          
+          <div class="small-card" data-project="blockchain-at-berkeley">
+            <h4 class="small-project-name">Blockchain at Berkeley</h4>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -79,10 +140,21 @@ title: Founder
 }
 
 .founder-hero {
-  padding: 4rem 4rem 6rem 4rem;
+  padding: 4rem 0 1rem 0;
   text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
+}
+
+.founder-hero .founder-description {
+  text-align: left;
+  max-width: none;
+}
+
+.founder-divider {
+  color: var(--text-muted);
+  text-align: center;
+  margin: 1.5rem 0 2.5rem 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
 }
 
 .founder-title {
@@ -94,20 +166,220 @@ title: Founder
 }
 
 .founder-subtitle {
-  font-size: 2.5rem;
-  font-weight: normal;
-  margin: 0 0 3rem 0;
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: italic;
+  margin: 0 0 2.5rem 0;
   color: var(--secondary-color);
-  line-height: 1.3;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
 }
 
 .founder-description {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.interactive-projects-section {
+  padding: 4rem 0;
+  background: rgba(212, 175, 55, 0.03);
+}
+
+.projects-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.projects-showcase {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.expanded-card {
+  background: rgba(212, 175, 55, 0.1);
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  transition: all 0.4s ease;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.expanded-content {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.expanded-project-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0 0 1.5rem 0;
+  flex-shrink: 0;
+}
+
+.narrative-content {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  padding-right: 0.5rem;
+}
+
+.narrative-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.narrative-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.narrative-content::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.narrative-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0 0 1.2rem 0;
+}
+
+.milestones {
+  margin: 2rem 0;
+}
+
+.milestones h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0 0 1rem 0;
+}
+
+.milestones ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.milestones li {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0 0 0.8rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.milestones li:before {
+  content: "→";
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.personal-quote {
+  background: rgba(212, 175, 55, 0.05);
+  border-left: 3px solid var(--primary-color);
+  padding: 1.5rem;
+  margin: 2rem 0 0 0;
+  font-size: 1.1rem;
+  font-style: italic;
   line-height: 1.6;
   color: var(--secondary-color);
-  max-width: 800px;
-  margin: 0 auto;
-  font-weight: normal;
+}
+
+.view-project-btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--background-color);
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.view-project-btn:hover {
+  background: rgba(212, 175, 55, 0.9);
+  transform: translateY(-2px);
+}
+
+.small-cards-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.small-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.small-card:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.small-project-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .small-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .expanded-card {
+    padding: 2rem;
+  }
+  
+  .expanded-project-name {
+    font-size: 2rem;
+  }
+  
+  .expanded-project-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .small-cards-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects-title {
+    font-size: 2.5rem;
+  }
 }
 
 .projects-section {
@@ -253,3 +525,176 @@ title: Founder
   }
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Project data
+  const projectsData = {
+    osmosis: {
+      name: 'Osmosis',
+      narrative: ['Osmosis began as an idea to solve liquidity fragmentation across the Cosmos ecosystem. While other chains were building isolated AMMs, we envisioned a protocol that could unify liquidity across the entire interchain.', 'The technical challenge was immense—creating customizable liquidity pools that could handle cross-chain assets while maintaining security and efficiency. We pioneered novel concepts like superfluid staking and concentrated liquidity that have since influenced the broader DeFi space.', 'What started as a technical experiment has grown into one of the largest DEXs in Cosmos, facilitating billions in trading volume and becoming the liquidity hub for the Internet of Blockchains.'],
+      milestones: ['2021: Protocol launch and initial liquidity mining', '2022: Superfluid staking implementation', '2023: $1B+ in total value locked', '2024: Cross-chain expansion beyond Cosmos'],
+      quote: 'Building Osmosis taught me that the most impactful protocols emerge from solving real problems that other teams are avoiding because they\'re too hard.',
+      link: 'https://osmosis.zone'
+    },
+    polaris: {
+      name: 'Polaris',
+      narrative: ['Polaris emerged from the realization that token routing across chains was becoming increasingly complex. Each new chain meant new bridges, new tokens, and new points of failure.', 'We designed Polaris as a universal asset bridge that could intelligently route tokens through the optimal path, whether that meant going through traditional bridges, DEX swaps, or novel cross-chain protocols.'],
+      milestones: ['2023: Initial research and protocol design', '2024: Testnet launch with major chains'],
+      quote: 'Polaris taught me that the best infrastructure is invisible—users shouldn\'t need to think about which chain their assets live on.',
+      link: '#'
+    },
+    sikka: {
+      name: 'Sikka',
+      narrative: ['Sikka was born in the early days of Cosmos when the network needed reliable validators and infrastructure providers. We saw an opportunity to not just run validators, but to build the tooling and services that would help the ecosystem thrive.', 'As one of the earliest validators, we helped secure multiple chains while developing infrastructure tools that other validators and developers could use.'],
+      milestones: ['2019: Initial validator setup on Cosmos Hub', '2020: Expansion to multiple Cosmos chains', '2021: Development of validator tooling'],
+      quote: 'Running infrastructure taught me that decentralization isn\'t just about protocols—it\'s about the people and organizations that keep them running.',
+      link: '#'
+    },
+    cosmos: {
+      name: 'Cosmos',
+      narrative: ['Joining the Cosmos founding team was a leap into the unknown. We were building something that many said was impossible—a network of sovereign blockchains that could communicate seamlessly.', 'My focus was on the Inter-Blockchain Communication (IBC) protocol and the overall strategy for how chains would interact.'],
+      milestones: ['2017: Joined founding team and protocol design', '2018: IBC specification development', '2019: Cosmos Hub launch'],
+      quote: 'Cosmos taught me that the most powerful technologies are those that enable others to build—that give people agency rather than taking it away.',
+      link: 'https://cosmos.network'
+    },
+    'blockchain-at-berkeley': {
+      name: 'Blockchain at Berkeley',
+      narrative: ['Blockchain at Berkeley started as a small group of students fascinated by this new technology called Bitcoin. What began as casual meetups quickly grew into one of the most influential blockchain organizations in academia.', 'We focused on education, research, and connecting students with opportunities in the rapidly growing blockchain space.'],
+      milestones: ['2016: Founded as student organization', '2017: First blockchain courses and workshops', '2018: Industry partnerships and internship programs'],
+      quote: 'Blockchain at Berkeley showed me the power of community and education in driving technological adoption.',
+      link: '#'
+    }
+  };
+
+  // Current expanded project
+  let currentExpanded = 'osmosis';
+  let isAnimating = false;
+
+  // Get DOM elements
+  const expandedCard = document.getElementById('expanded-card');
+  const expandedName = document.getElementById('expanded-name');
+  const narrativeText = document.getElementById('narrative-text');
+  const milestones = document.getElementById('milestones');
+  const personalQuote = document.getElementById('personal-quote');
+  const expandedLink = document.getElementById('expanded-link');
+  const smallCards = document.querySelectorAll('.small-card');
+  
+  // Function to update expanded card content
+  function updateExpandedCard(projectData) {
+    expandedName.textContent = projectData.name;
+    expandedLink.href = projectData.link;
+    
+    // Update narrative text
+    if (projectData.narrative) {
+      narrativeText.innerHTML = projectData.narrative.map(p => `<p>${p}</p>`).join('');
+    }
+    
+    // Update milestones
+    if (projectData.milestones) {
+      milestones.querySelector('ul').innerHTML = projectData.milestones.map(m => `<li>${m}</li>`).join('');
+    }
+    
+    // Update quote
+    if (projectData.quote) {
+      personalQuote.textContent = projectData.quote;
+    }
+  }
+
+  // Handle small card clicks
+  smallCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const newProject = this.getAttribute('data-project');
+      
+      if (newProject !== currentExpanded && !isAnimating) {
+        isAnimating = true;
+        
+        // Get positions for animation
+        const expandedRect = expandedCard.getBoundingClientRect();
+        const clickedRect = this.getBoundingClientRect();
+        
+        // Create temporary clones for animation
+        const expandedClone = expandedCard.cloneNode(true);
+        const clickedClone = this.cloneNode(true);
+        
+        // Style clones for animation
+        expandedClone.style.position = 'fixed';
+        expandedClone.style.top = expandedRect.top + 'px';
+        expandedClone.style.left = expandedRect.left + 'px';
+        expandedClone.style.width = expandedRect.width + 'px';
+        expandedClone.style.height = expandedRect.height + 'px';
+        expandedClone.style.zIndex = '1000';
+        expandedClone.style.margin = '0';
+        
+        clickedClone.style.position = 'fixed';
+        clickedClone.style.top = clickedRect.top + 'px';
+        clickedClone.style.left = clickedRect.left + 'px';
+        clickedClone.style.width = clickedRect.width + 'px';
+        clickedClone.style.height = clickedRect.height + 'px';
+        clickedClone.style.zIndex = '1001';
+        clickedClone.style.margin = '0';
+        
+        // Hide originals
+        expandedCard.style.opacity = '0';
+        this.style.opacity = '0';
+        
+        // Add clones to body
+        document.body.appendChild(expandedClone);
+        document.body.appendChild(clickedClone);
+        
+        // Force reflow
+        expandedClone.offsetHeight;
+        clickedClone.offsetHeight;
+        
+        // Animate the swap
+        setTimeout(() => {
+          // Animate expanded card to small position
+          expandedClone.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+          expandedClone.style.top = clickedRect.top + 'px';
+          expandedClone.style.left = clickedRect.left + 'px';
+          expandedClone.style.width = clickedRect.width + 'px';
+          expandedClone.style.height = clickedRect.height + 'px';
+          expandedClone.style.transform = 'scale(0.8)';
+          expandedClone.style.opacity = '0.7';
+          
+          // Animate clicked card to expanded position
+          clickedClone.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+          clickedClone.style.top = expandedRect.top + 'px';
+          clickedClone.style.left = expandedRect.left + 'px';
+          clickedClone.style.width = expandedRect.width + 'px';
+          clickedClone.style.height = expandedRect.height + 'px';
+          clickedClone.style.transform = 'scale(1.1)';
+        }, 50);
+        
+        // Update content and clean up after animation
+        setTimeout(() => {
+          // Update expanded card content
+          const newProjectData = projectsData[newProject];
+          updateExpandedCard(newProjectData);
+          
+          // Update the clicked small card to show the previous expanded project
+          const newName = this.querySelector('.small-project-name');
+          newName.textContent = projectsData[currentExpanded].name;
+          this.setAttribute('data-project', currentExpanded);
+          
+          // Update current expanded
+          currentExpanded = newProject;
+          
+          // Restore originals
+          expandedCard.style.opacity = '1';
+          this.style.opacity = '1';
+          
+          // Remove clones
+          document.body.removeChild(expandedClone);
+          document.body.removeChild(clickedClone);
+          
+          isAnimating = false;
+        }, 650);
+      }
+    });
+  });
+  
+  // Initialize with default content
+  updateExpandedCard(projectsData[currentExpanded]);
+});
+</script>

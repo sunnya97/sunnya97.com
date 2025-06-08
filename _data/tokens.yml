@@ -40,6 +40,12 @@
   logo: "/assets/token_logos/phala-logo.png"
   color: "#CDFA50"
 
+- name: "Jupiter"
+  symbol: "JUP"
+  link: "https://jup.ag/"
+  logo: "/assets/token_logos/jupiter-logo.png"
+  color: "#19FB9B"
+
 - name: "MetaDAO"
   symbol: "META"
   link: "https://metadao.fi/"
@@ -55,7 +61,7 @@
 - name: "Cosmos Hub"
   symbol: "ATOM"
   link: "https://hub.cosmos.network/"
-  logo: "/assets/token_logos/cosmos-logo.png"
+  logo: "/assets/token_logos/cosmos-logo.svg"
   color: "#2E3148"
 
 # - name: "Babylon"
@@ -75,12 +81,6 @@
 #   link: "https://www.kava.io/"
 #   logo: "/assets/token_logos/kava-token-logo.png"
 #   color: "#FF433E"
-
-- name: "Jupiter"
-  symbol: "JUP"
-  link: "https://jup.ag/"
-  logo: "/assets/token_logos/jupiter-logo.png"
-  color: "#19FB9B"
 
 # - name: "LayerZero"
 #   symbol: "ZRO"

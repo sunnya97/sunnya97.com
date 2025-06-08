@@ -55,7 +55,8 @@
       "WebFetch(domain:www.coingecko.com)",
       "WebFetch(domain:www.coingecko.com)",
       "WebFetch(domain:www.coingecko.com)",
-      "WebFetch(domain:www.coingecko.com)"
+      "WebFetch(domain:www.coingecko.com)",
+      "WebFetch(domain:github.com)"
     ],
     "deny": []
   },

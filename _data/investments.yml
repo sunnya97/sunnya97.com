@@ -299,7 +299,7 @@
   featured: false
 
 - name: Zap
-  categories: ["Crypto"]
+  categories: ["Crypto", "Graveyard"]
   blurb: "Social Trading Bots"
   description: "our vision is to enable on-chain discovery and trading on every social platform"
   link: "https://zap.xyz/"
@@ -342,6 +342,8 @@
   blurb: "Physical spaces for personal education journeys"
   description: "Developer tools and infrastructure for blockchain applications."
   link: "https://shiftup.tech/"
+  logo: "/assets/logos/shiftup-logo-light.png"
+  color: "#222222"
   featured: false
 
 - name: Kava
@@ -385,7 +387,7 @@
   featured: false
 
 - name: Fiat Lux DAO
-  categories: ["Crypto"]
+  categories: ["Crypto", "Graveyard"]
   blurb: "Berkeley Alumni DAO"
   description: "FiatLux is a collective of UC Berkeley alumni that came together over ~48 hours to pool together funds to bid on the first of two Nobel NFTs that UC Berkeley plans to mint, and grew into something much larger: A DAO with the mission of highlighting the importance of science and technology to society, while leveraging the power of crypto to fund breakthrough academic research in novel & more accessible ways."
   link: "https://fiatlux.mirror.xyz/USuZKjVeYcySoc5m_qzkbqOF1oFLWx_N-7TLXZw1EMc"
