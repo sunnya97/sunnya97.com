@@ -2,6 +2,24 @@
   --primary-color: #d4af37;
   --secondary-color: #fff;
   --background-color: #000;
+  
+  /* Layout variables */
+  --site-container-width: 1280px;
+  --content-width: 720px;
+  --container-padding: 1rem;
+}
+
+/* Layout Utility Classes */
+.site-container {
+  max-width: var(--site-container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 body {
@@ -24,7 +42,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 2rem 0;
   position: relative;
   z-index: 10;
 }
@@ -69,7 +87,7 @@ body {
   display: flex;
   flex: 1;
   align-items: center;
-  padding: 0 4rem;
+  padding: 0;
   gap: 4rem;
 }
 
@@ -78,7 +96,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 4rem;
 }
 
 .hero-title {
@@ -155,13 +172,12 @@ body {
 }
 
 .tarot-section {
-  width: 100vw;
   min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--background-color);
-  padding: 4rem 2rem;
+  padding: 4rem 0;
 }
 
 .tarot-grid {
@@ -169,7 +185,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   max-width: 1200px;
-  width: 100%;
+  margin: 0 auto;
 }
 
 .tarot-card {

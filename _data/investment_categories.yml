@@ -1,10 +1,15 @@
+- name: "All"
+  description: "Companies I've Backed"
+  quote: "Supporting the people and ideas I believe in"
+  show_filter: false
+
 - name: "AI"
-  description: "Projects leveraging and advancing artifical intelligence"
+  description: "Leveraging and Advancing AI"
   quote: "Companies building building the future of intelligence"
   show_filter: true
 
 - name: "Crypto"
-  description: "Projects pushing the frontier of crypto, blockchains, and decentralized systems."
+  description: "Crypto, Blockchains, and Decentralized Systems"
   quote: "Decentralizing the world, one protocol at a time"
   show_filter: true
 
@@ -14,12 +19,12 @@
   show_filter: true
 
 - name: "Cosmos"
-  description: "Projects built on or related to the Cosmos ecosystem"
+  description: "Projects built on the Cosmos ecosystem"
   quote: "The internet of blockchains, connecting all chains"
   show_filter: true
 
 - name: "Funds"
-  description: "Investing in investors."
+  description: "Investing in investors"
   quote: "Backing the fund managers building tomorrow"
   show_filter: true
 
@@ -34,12 +39,12 @@
   show_filter: false
 
 - name: "Advisor"
-  description: "Sometimes the best capital isn't monetary. Projects where I've offered time, insight, or ongoing strategic support."
+  description: "Sometimes the best capital isn't monetary"
   quote: "Contributing wisdom to founders I believe in"
   show_filter: true
 
 - name: "Graveyard"
-  description: "Projects that didn't survive. Sometimes the best lessons come from failure."
+  description: "Projects that didn't survive"
   quote: "Sometimes the best lessons come from failure"
   show_filter: true
 

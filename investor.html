@@ -7,7 +7,7 @@ title: Investor
   {% include header.html %}
 
   <section class="investor-hero">
-    <div class="investor-hero-content">
+    <div class="content">
       <h1 class="investor-title">INVESTOR</h1>
       <h2 class="investor-subtitle">I invest in people, ideas, and communities with capital, time, and belief.</h2>
       <p class="investor-description">
@@ -17,7 +17,9 @@ title: Investor
   </section>
 
   <section class="card-portfolio-section">
-    <h2 class="section-title">Full Investment Portfolio</h2>
+    <div class="category-description">
+      <h2 id="category-quote" class="section-title">{% for category in site.data.investment_categories %}{% if category.name == "All" %}{{ category.description }}{% endif %}{% endfor %}</h2>
+    </div>
     
     <div class="card-filter-tabs">
       <button class="card-filter-btn active" data-filter="all">All</button>
@@ -26,10 +28,6 @@ title: Investor
           <button class="card-filter-btn" data-filter="{{ category.name }}">{{ category.name }}</button>
         {% endif %}
       {% endfor %}
-    </div>
-    
-    <div class="category-description">
-      <p id="category-quote">I invest in people, ideas, and communities with capital, time, and belief.</p>
     </div>
     
     <div class="portfolio-cards-grid">
@@ -93,10 +91,8 @@ title: Investor
 }
 
 .investor-hero {
-  padding: 4rem 4rem 6rem 4rem;
+  padding: 4rem 0 2rem 0;
   text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .investor-title {
@@ -108,25 +104,23 @@ title: Investor
 }
 
 .investor-subtitle {
-  font-size: 1.4rem;
-  font-weight: normal;
+  font-size: 1.6rem;
+  font-weight: 300;
   font-style: italic;
-  margin: 0 0 3rem 0;
+  margin: 0 0 3.5rem 0;
   color: var(--secondary-color);
-  line-height: 1.6;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
 }
 
 .investor-description {
-  font-size: 1.4rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.7;
   color: var(--secondary-color);
-  max-width: 800px;
-  margin: 0 auto;
-  font-weight: normal;
-  text-align: justify;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0.2px;
+  opacity: 0.95;
 }
 
 .section-title {
@@ -146,9 +140,7 @@ title: Investor
 }
 
 .card-portfolio-section {
-  padding: 6rem 4rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 2rem 0 6rem 0;
 }
 
 .card-filter-tabs {
@@ -409,8 +401,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Category descriptions data - generated from Jekyll YAML
   const categoryDescriptions = {
-    'all': 'I invest in people, ideas, and communities with capital, time, and belief.'{% for category in site.data.investment_categories %}{% if category.show_filter %},
-    '{{ category.name }}': {{ category.description | jsonify }}{% endif %}{% endfor %}
+    {% for category in site.data.investment_categories %}
+      '{{ category.name }}': {{ category.description | jsonify }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
   };
   
   cardFilterBtns.forEach(btn => {
@@ -423,8 +416,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const filter = this.getAttribute('data-filter');
       
       // Update category description
-      if (categoryDescriptions[filter]) {
-        categoryQuote.textContent = categoryDescriptions[filter];
+      const filterKey = filter === 'all' ? 'All' : filter;
+      if (categoryDescriptions[filterKey]) {
+        categoryQuote.textContent = categoryDescriptions[filterKey];
       }
       
       // FLIP animation: First - record initial positions

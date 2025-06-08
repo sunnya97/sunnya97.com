@@ -18,18 +18,20 @@ layout: home
 </div>
 
 <section class="tarot-section">
-  <div class="tarot-grid">
-    <a href="/founder.html" class="tarot-card">
-      <img src="/assets/images/founder.png" alt="Founder Tarot Card">
-    </a>
-    <div class="tarot-card">
-      <img src="/assets/images/adventurer.png" alt="Adventurer Tarot Card">
-    </div>
-    <a href="/investor.html" class="tarot-card">
-      <img src="/assets/images/investor.png" alt="Investor Tarot Card">
-    </a>
-    <div class="tarot-card">
-      <img src="/assets/images/scholar.png" alt="Scholar Tarot Card">
+  <div class="site-container">
+    <div class="tarot-grid">
+      <a href="/founder.html" class="tarot-card">
+        <img src="/assets/images/founder.png" alt="Founder Tarot Card">
+      </a>
+      <div class="tarot-card">
+        <img src="/assets/images/adventurer.png" alt="Adventurer Tarot Card">
+      </div>
+      <a href="/investor.html" class="tarot-card">
+        <img src="/assets/images/investor.png" alt="Investor Tarot Card">
+      </a>
+      <div class="tarot-card">
+        <img src="/assets/images/scholar.png" alt="Scholar Tarot Card">
+      </div>
     </div>
   </div>
 </section>
