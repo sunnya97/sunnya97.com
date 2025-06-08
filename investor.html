@@ -427,6 +427,11 @@ document.addEventListener('DOMContentLoaded', function() {
         categoryQuote.textContent = categoryDescriptions[filter];
       }
       
+      // FLIP animation: First - record initial positions
+      const cardElements = Array.from(portfolioCards).map(card => card.parentElement);
+      const firstPositions = cardElements.map(el => el.getBoundingClientRect());
+      
+      // Apply filter changes
       portfolioCards.forEach(card => {
         if (filter === 'all') {
           card.parentElement.style.display = 'block';
@@ -436,6 +441,29 @@ document.addEventListener('DOMContentLoaded', function() {
             card.parentElement.style.display = 'block';
           } else {
             card.parentElement.style.display = 'none';
+          }
+        }
+      });
+      
+      // FLIP animation: Last - record final positions
+      const lastPositions = cardElements.map(el => el.getBoundingClientRect());
+      
+      // FLIP animation: Invert and Play
+      cardElements.forEach((el, index) => {
+        if (el.style.display !== 'none') {
+          const first = firstPositions[index];
+          const last = lastPositions[index];
+          const deltaX = first.left - last.left;
+          const deltaY = first.top - last.top;
+          
+          if (deltaX || deltaY) {
+            el.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+            el.style.transition = 'none';
+            
+            requestAnimationFrame(() => {
+              el.style.transform = '';
+              el.style.transition = 'transform 0.4s cubic-bezier(0.2, 0, 0.2, 1)';
+            });
           }
         }
       });
