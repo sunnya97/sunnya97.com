@@ -29,7 +29,7 @@
   featured: false
 
 - name: UTXO Management
-  categories: ["Fund", "Crypto", "Bitcoin"]
+  categories: ["Funds", "Crypto", "Bitcoin"]
   blurb: "Bitcoin ecosystem fund"
   description: "Investment fund focused on Bitcoin and Bitcoin-related technologies."
   link: "https://www.utxo.management/"
@@ -279,7 +279,7 @@
   featured: false
 
 - name: Frachtis
-  categories: ["Fund", "Crypto"]
+  categories: ["Funds", "Crypto"]
   blurb: "Crypto-native pre-seed fund"
   description: "Early-stage venture capital fund investing in innovative technology companies."
   link: "https://frachtis.com/"
@@ -289,7 +289,7 @@
   featured: false
 
 - name: Interop Ventures
-  categories: ["Fund", "Crypto", "Cosmos"]
+  categories: ["Funds", "Crypto", "Cosmos"]
   blurb: "Interoperability-focused Fund"
   description: "Venture capital fund specializing in interoperability and cross-chain technologies."
   link: "https://interop.ventures/"
@@ -394,7 +394,7 @@
   featured: false
 
 - name: SHL Capital
-  categories: ["Fund"]
+  categories: ["Funds"]
   blurb: "Personal Syndicate of Sahil Lavingia"
   description: "Angel investment syndicate backing early-stage technology startups."
   link: "https://angel.co/shl/syndicate"
@@ -403,7 +403,7 @@
   featured: false
 
 - name: Delphi InfiNFT
-  categories: ["Fund", "Crypto"]
+  categories: ["Funds", "Crypto"]
   blurb: "NFT Investment Fund"
   description: "Investment syndicate focused on NFT and digital collectibles projects."
   link: "https://cointelegraph.com/news/delphi-digital-forms-5-million-nft-investment-syndicate"

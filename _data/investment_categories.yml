@@ -1,15 +1,15 @@
 - name: "AI"
-  description: "Artificial intelligence and machine learning companies"
-  quote: "Building the future of human-AI collaboration"
+  description: "Projects leveraging and advancing artifical intelligence"
+  quote: "Companies building building the future of intelligence"
   show_filter: true
 
 - name: "Crypto"
-  description: "General cryptocurrency and blockchain projects"
+  description: "Projects pushing the frontier of crypto, blockchains, and decentralized systems."
   quote: "Decentralizing the world, one protocol at a time"
   show_filter: true
 
 - name: "Bitcoin"
-  description: "Bitcoin-focused projects and infrastructure"
+  description: "Orange-pilling the world through better money"
   quote: "Orange-pilling the world through better money"
   show_filter: true
 
@@ -18,32 +18,32 @@
   quote: "The internet of blockchains, connecting all chains"
   show_filter: true
 
-- name: "Fund"
-  description: "Investment funds and venture capital"
+- name: "Funds"
+  description: "Investing in investors."
   quote: "Backing the fund managers building tomorrow"
   show_filter: true
 
 - name: "FinTech"
-  description: "Financial technology companies"
+  description: "Non-crypto financial technology companies"
   quote: "Rebuilding financial infrastructure for the digital age"
   show_filter: false
 
 - name: "Education"
-  description: "Educational platforms and initiatives"
+  description: "Pushing forward human intelligence"
   quote: "Democratizing access to knowledge and learning"
   show_filter: false
 
 - name: "Advisor"
-  description: "Advisory positions and relationships"
+  description: "Sometimes the best capital isn't monetary. Projects where I've offered time, insight, or ongoing strategic support."
   quote: "Contributing wisdom to founders I believe in"
   show_filter: true
 
 - name: "Graveyard"
-  description: "Projects that are no longer active"
+  description: "Projects that didn't survive. Sometimes the best lessons come from failure."
   quote: "Sometimes the best lessons come from failure"
   show_filter: true
 
 - name: "DeFi"
-  description: "Decentralized finance protocols and platforms"
+  description: "Modern rails for digital money, financial access, and programmable economies."
   quote: "Programmable money for a programmable world"
   show_filter: false

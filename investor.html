@@ -11,7 +11,7 @@ title: Investor
       <h1 class="investor-title">INVESTOR</h1>
       <h2 class="investor-subtitle">I invest in people, ideas, and communities with capital, time, and belief.</h2>
       <p class="investor-description">
-        Through Byzantine Ventures and personally, I back early-stage projects that challenge assumptions and build new systems. I look for ambitious founders, paradigm-shifting ideas, and open-ended spaces — and when I invest, I stay close.
+        I don't invest professionally. I do it to support the people and ideas I believe in. Sometimes that means angel checks. Sometimes it means advising. Occasionally, I back other fund managers I trust. I'm not optimizing for returns. I'm just backing what I want to see exist. Nothing here is financial advice.
       </p>
     </div>
   </section>
@@ -108,11 +108,15 @@ title: Investor
 }
 
 .investor-subtitle {
-  font-size: 2.5rem;
+  font-size: 1.4rem;
   font-weight: normal;
+  font-style: italic;
   margin: 0 0 3rem 0;
   color: var(--secondary-color);
-  line-height: 1.3;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .investor-description {
@@ -122,6 +126,7 @@ title: Investor
   max-width: 800px;
   margin: 0 auto;
   font-weight: normal;
+  text-align: justify;
 }
 
 .section-title {
@@ -175,12 +180,14 @@ title: Investor
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
+  transition: all 0.4s ease;
 }
 
 .portfolio-card-link {
   text-decoration: none;
   color: inherit;
   display: block;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-card {
@@ -188,6 +195,7 @@ title: Investor
   flex-direction: column;
   transition: all 0.3s ease;
 }
+
 
 .portfolio-card:hover {
   transform: translateY(-4px);
@@ -399,14 +407,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const portfolioCards = document.querySelectorAll('.portfolio-card');
   const categoryQuote = document.getElementById('category-quote');
   
-  // Category quotes data
-  const categoryQuotes = {
-    'all': 'I invest in people, ideas, and communities with capital, time, and belief.',
-    {% for category in site.data.investment_categories %}
-      {% if category.show_filter %}
-        '{{ category.name }}': '{{ category.quote }}',
-      {% endif %}
-    {% endfor %}
+  // Category descriptions data - generated from Jekyll YAML
+  const categoryDescriptions = {
+    'all': 'I invest in people, ideas, and communities with capital, time, and belief.'{% for category in site.data.investment_categories %}{% if category.show_filter %},
+    '{{ category.name }}': {{ category.description | jsonify }}{% endif %}{% endfor %}
   };
   
   cardFilterBtns.forEach(btn => {
@@ -418,9 +422,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
       const filter = this.getAttribute('data-filter');
       
-      // Update category quote
-      if (categoryQuotes[filter]) {
-        categoryQuote.textContent = categoryQuotes[filter];
+      // Update category description
+      if (categoryDescriptions[filter]) {
+        categoryQuote.textContent = categoryDescriptions[filter];
       }
       
       portfolioCards.forEach(card => {
