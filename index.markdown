@@ -23,9 +23,9 @@ layout: home
       <a href="/founder.html" class="tarot-card">
         <img src="/assets/images/founder.png" alt="Founder Tarot Card">
       </a>
-      <div class="tarot-card">
+      <a href="/adventurer.html" class="tarot-card">
         <img src="/assets/images/adventurer.png" alt="Adventurer Tarot Card">
-      </div>
+      </a>
       <a href="/investor.html" class="tarot-card">
         <img src="/assets/images/investor.png" alt="Investor Tarot Card">
       </a>

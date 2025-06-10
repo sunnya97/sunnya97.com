@@ -1,0 +1,859 @@
+---
+layout: archetype
+title: Adventurer
+---
+
+<link rel="stylesheet" href="/assets/css/lightbox.css">
+<script src="/assets/js/lightbox.js"></script>
+
+<div class="adventurer-container">
+  {% include header.html %}
+
+  <section class="adventurer-hero">
+    <div class="content">
+      <h1 class="adventurer-title">ADVENTURER</h1>
+      <h2 class="adventurer-subtitle">I explore the edges of the world: off-road, under the sea, and through the sky.</h2>
+      <div class="adventurer-divider">• • •</div>
+      <p class="adventurer-description">
+        I fly planes, ride motorcycles, and dive into wild places. I move through the world to better understand my place in it. Adventure isn't an escape — it's how I learn, integrate, and stay awake to life.
+      </p>
+    </div>
+  </section>
+
+  <section class="merit-badges-section">
+    <div class="content">
+      <h2 class="section-title">Merit Badges</h2>
+      
+      <div class="badges-grid">
+        <div class="badge-card" data-badge="flying">
+          <div class="badge-icon">
+            <img src="/assets/merit_badges/flying.webp" alt="Flying Merit Badge" class="badge-image">
+          </div>
+          <h3 class="badge-name">Flying</h3>
+        </div>
+        
+        <div class="badge-card" data-badge="skydiving">
+          <div class="badge-icon">
+            <img src="/assets/merit_badges/skydiving.png" alt="Skydiving Merit Badge" class="badge-image">
+          </div>
+          <h3 class="badge-name">Skydiving</h3>
+        </div>
+        
+        <div class="badge-card" data-badge="motorcycling">
+          <div class="badge-icon">
+            <img src="/assets/merit_badges/motorcycle.png" alt="Motorcycling Merit Badge" class="badge-image">
+          </div>
+          <h3 class="badge-name">Motorcycling</h3>
+        </div>
+        
+        <div class="badge-card" data-badge="scuba">
+          <div class="badge-icon">
+            <img src="/assets/merit_badges/scuba.webp" alt="Scuba Diving Merit Badge" class="badge-image">
+          </div>
+          <h3 class="badge-name">Scuba Diving</h3>
+        </div>
+        
+        <div class="badge-card" data-badge="sailing">
+          <div class="badge-icon">
+            <img src="/assets/merit_badges/sailing.webp" alt="Sailing Merit Badge" class="badge-image">
+          </div>
+          <h3 class="badge-name">Sailing</h3>
+        </div>
+        
+        <div class="badge-card" data-badge="paramotoring">
+          <div class="badge-icon">
+            <img src="/assets/merit_badges/paramotor.png" alt="Paramotoring Merit Badge" class="badge-image">
+          </div>
+          <h3 class="badge-name">Paramotoring</h3>
+        </div>
+        
+        <div class="badge-card" data-badge="skiing">
+          <div class="badge-icon">
+            <img src="/assets/merit_badges/skiing.png" alt="Skiing Merit Badge" class="badge-image">
+          </div>
+          <h3 class="badge-name">Skiing</h3>
+        </div>
+        
+        <div class="badge-card" data-badge="kayaking">
+          <div class="badge-icon">
+            <img src="/assets/merit_badges/kayaking.webp" alt="Kayaking Merit Badge" class="badge-image">
+          </div>
+          <h3 class="badge-name">Kayaking</h3>
+        </div>
+      </div>
+      
+      <div class="badge-details" id="badge-details" style="display: none;">
+        <div class="badge-content">
+          <h3 id="badge-title"></h3>
+          <div class="badge-story" id="badge-story"></div>
+          <div class="badge-images" id="badge-images">
+            <!-- Images will be dynamically loaded -->
+          </div>
+          <div class="badge-stat" id="badge-stat"></div>
+        </div>
+        <button class="close-badge" id="close-badge">×</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="travel-map-section">
+    <div class="content">
+      <h2 class="section-title">Travel Map</h2>
+      
+      <div class="map-container">
+        <div class="world-map">
+          <!-- Placeholder pins for different regions -->
+          <div class="map-pin favorite" data-location="san-francisco" style="left: 8%; top: 35%;">
+            <div class="pin-marker">⭐</div>
+          </div>
+          
+          <div class="map-pin" data-location="new-york" style="left: 25%; top: 32%;">
+            <div class="pin-marker">📍</div>
+          </div>
+          
+          <div class="map-pin favorite" data-location="tokyo" style="left: 85%; top: 40%;">
+            <div class="pin-marker">⭐</div>
+          </div>
+          
+          <div class="map-pin" data-location="london" style="left: 48%; top: 28%;">
+            <div class="pin-marker">📍</div>
+          </div>
+          
+          <div class="map-pin" data-location="sydney" style="left: 88%; top: 75%;">
+            <div class="pin-marker">📍</div>
+          </div>
+          
+          <div class="map-pin favorite" data-location="reykjavik" style="left: 42%; top: 20%;">
+            <div class="pin-marker">⭐</div>
+          </div>
+          
+          <div class="map-pin" data-location="cairo" style="left: 55%; top: 50%;">
+            <div class="pin-marker">📍</div>
+          </div>
+          
+          <div class="map-pin" data-location="rio" style="left: 32%; top: 70%;">
+            <div class="pin-marker">📍</div>
+          </div>
+        </div>
+        
+        <div class="location-tooltip" id="location-tooltip" style="display: none;">
+          <h4 id="tooltip-city"></h4>
+          <p id="tooltip-year"></p>
+          <p id="tooltip-note"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quests-section">
+    <div class="content">
+      <h2 class="section-title">Quests</h2>
+      
+      <div class="quests-list">
+        <div class="quest-card">
+          <div class="quest-status in-progress">In Progress</div>
+          <h3 class="quest-title">Visit all U.S. National Parks</h3>
+          <p class="quest-description">
+            Slowly exploring every major landscape in the country — one park at a time.
+          </p>
+          <div class="quest-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 35%;"></div>
+            </div>
+            <span class="progress-text">22 of 63 parks</span>
+          </div>
+        </div>
+        
+        <div class="quest-card">
+          <div class="quest-status someday">Someday</div>
+          <h3 class="quest-title">Hike the Appalachian Trail</h3>
+          <p class="quest-description">
+            A 2,190-mile walk through 14 states — part pilgrimage, part reset button.
+          </p>
+          <div class="quest-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">2,190 miles to go</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<style>
+.adventurer-container {
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--primary-color);
+}
+
+.adventurer-hero {
+  padding: 4rem 0 1rem 0;
+  text-align: center;
+}
+
+.adventurer-hero .adventurer-description {
+  text-align: left;
+  max-width: none;
+}
+
+.adventurer-divider {
+  color: var(--text-muted);
+  text-align: center;
+  margin: 1.5rem 0 2.5rem 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
+}
+
+.adventurer-title {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 0 0 2rem 0;
+  letter-spacing: 3px;
+  color: var(--primary-color);
+}
+
+.adventurer-subtitle {
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: italic;
+  margin: 0 0 2.5rem 0;
+  color: var(--secondary-color);
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+}
+
+.adventurer-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.merit-badges-section {
+  padding: 4rem 0;
+  background: rgba(212, 175, 55, 0.03);
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.badge-card {
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.badge-card:hover,
+.badge-card.active {
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateY(-5px);
+}
+
+.badge-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-image {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+
+.badge-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+.badge-details {
+  background: rgba(212, 175, 55, 0.1);
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 3rem;
+  margin-top: 2rem;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.badge-content h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 0 0 1.5rem 0;
+}
+
+.badge-story {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.badge-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.badge-images.no-images {
+  display: none;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.adventure-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.adventure-image:hover {
+  transform: scale(1.05);
+  border-color: var(--primary-color);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 2rem 1rem 0.8rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  border-radius: 0 0 6px 6px;
+}
+
+.image-container:hover .image-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.adventure-image {
+  cursor: pointer;
+}
+
+.badge-stat {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  background: rgba(212, 175, 55, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.close-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.travel-map-section {
+  padding: 4rem 0;
+}
+
+.map-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.world-map {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-pin {
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pin-marker {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.map-pin:hover {
+  transform: scale(1.2);
+}
+
+.map-pin.favorite .pin-marker {
+  font-size: 2rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.location-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  max-width: 200px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.location-tooltip h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.location-tooltip p {
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+}
+
+.quests-section {
+  padding: 4rem 0;
+  background: rgba(212, 175, 55, 0.03);
+}
+
+.quests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quest-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  padding: 2.5rem;
+  position: relative;
+}
+
+.quest-status {
+  position: absolute;
+  top: -1px;
+  right: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 8px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quest-status.in-progress {
+  background: #4CAF50;
+  color: white;
+}
+
+.quest-status.someday {
+  background: #FF9800;
+  color: white;
+}
+
+.quest-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0 0 1rem 0;
+}
+
+.quest-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.quest-progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  .adventurer-title {
+    font-size: 4.5rem;
+  }
+  .adventurer-subtitle {
+    font-size: 1.4rem;
+  }
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .adventurer-hero, .merit-badges-section, .travel-map-section, .quests-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .adventurer-title {
+    font-size: 3.5rem;
+  }
+  .adventurer-subtitle {
+    font-size: 1.2rem;
+  }
+  .badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .badge-images {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .adventurer-hero, .merit-badges-section, .travel-map-section, .quests-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .adventurer-title {
+    font-size: 2.5rem;
+  }
+  .adventurer-subtitle {
+    font-size: 1rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .badges-grid {
+    grid-template-columns: 1fr;
+  }
+  .badge-details {
+    padding: 2rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Badge interaction data
+  const badgeData = {
+    flying: {
+      title: 'Flying',
+      story: [
+        'Started with a discovery flight that changed everything. The moment the plane lifted off, I knew I had to learn to control this machine.',
+        'Earned my private pilot license flying Cessnas out of small airports. There\'s something pure about reading the wind, watching the instruments, and navigating by sight.',
+        'Now I fly whenever I can — for the perspective it gives, the focus it demands, and the reminder that humans really can soar.'
+      ],
+      stat: '127 flight hours logged',
+      images: [
+        { src: '/assets/images/adventurer/flying/flying_jackie_first_flight.png', caption: 'First flight with Jackie' }
+      ]
+    },
+    skydiving: {
+      title: 'Skydiving',
+      story: [
+        'First jump was a tandem that left me completely addicted to the rush. The moment of stepping out into nothing but air is unlike anything else.',
+        'Got my solo certification and started jumping regularly. Each jump teaches you something new about fear, trust, and letting go.',
+        'The freefall is just the beginning — under canopy is where you really learn to fly.'
+      ],
+      stat: '6 jumps completed',
+      images: [
+        { src: '/assets/images/adventurer/skydiving/G0048678.JPG', caption: 'My first tandem skydive' }
+      ]
+    },
+    motorcycling: {
+      title: 'Motorcycling',
+      story: [
+        'Started on back roads, learning to lean into turns and read the asphalt like a book. Every ride is a meditation in motion.',
+        'Took my first long-distance trip across state lines — just me, the bike, and hundreds of miles of open road ahead.',
+        'Motorcycling strips away everything unnecessary. It\'s pure connection between human, machine, and the road.'
+      ],
+      stat: '15,000+ miles ridden',
+      images: [
+        { src: '/assets/images/adventurer/motorcycle/IMG_20191107_070406_264.jpg', caption: 'My Ninja 400' },
+        { src: '/assets/images/adventurer/motorcycle/2022-10-22 00.50.36.jpg', caption: 'In the Colombian countryside'},
+        { src: '/assets/images/adventurer/motorcycle/IMG_0003.jpg', caption: 'Riding with the boys' },
+        { src: '/assets/images/adventurer/motorcycle/IMG_2511.jpg', caption: 'Road trip in Ladakh' }
+      ]
+    },
+    scuba: {
+      title: 'Scuba Diving',
+      story: [
+        'First dive was in murky lake water, but even that glimpse of the underwater world was enough to hook me completely.',
+        'Got certified in tropical waters where the visibility stretched forever and the marine life was abundant.',
+        'Every dive is exploration of an alien world that exists right here on our planet.'
+      ],
+      stat: '28 dives across 3 countries',
+      images: [
+        { src: '/assets/images/adventurer/scuba/6BE2AA86-5A93-461E-AB70-FFE1B081B3A7.jpg', caption: 'Exploring the cenotes in Mexico' },
+        { src: '/assets/images/adventurer/scuba/IMG_2231.JPG', caption: 'Diving between continental places in Iceland' }
+      ]
+    },
+    sailing: {
+      title: 'Sailing',
+      story: [
+        'Learned to read the wind and work with forces much bigger than myself. Sailing teaches patience and respect for nature.',
+        'Nothing beats the silence of a boat cutting through water under full sail, powered only by the wind.',
+        'Each sailing trip is a lesson in self-reliance, weather reading, and finding your way by the stars.'
+      ],
+      stat: '12 multi-day sailing trips',
+      images: [
+        { src: '/assets/images/adventurer/sailing/FB_IMG_1547776569768.jpg', caption: 'My first sailing trip' }
+      ]
+    },
+    paramotoring: {
+      title: 'Paramotoring',
+      story: [
+        'Discovered this sport as the closest thing to being a bird — just you, a wing, and a motor strapped to your back.',
+        'Training involved learning to control a parachute on the ground before ever adding the motor to the equation.',
+        'Flying low and slow gives you a completely different perspective than traditional aviation.'
+      ],
+      stat: '8 training flights completed'
+    },
+    skiing: {
+      title: 'Skiing',
+      story: [
+        'First learned on the bunny slopes, falling more than skiing, but gradually found my rhythm on the mountain.',
+        'There\'s something magical about carving turns down a mountain with fresh powder flying behind you.',
+        'Skiing teaches you to read terrain, respect nature\'s power, and find flow in challenging conditions.'
+      ],
+      stat: '25+ days on the mountain',
+      images: [
+        { src: '/assets/images/adventurer/skiing/IMG_6740.jpg', caption: 'Fresh powder in Niseko' },
+        { src: '/assets/images/adventurer/skiing/IMG_1394.jpg', caption: 'Snowshoeing in the Rockies' },
+        { src: '/assets/images/adventurer/skiing/IMG_2112.jpg', caption: 'Ice climbing in Iceland' },
+      ]
+    },
+    kayaking: {
+      title: 'Kayaking',
+      story: [
+        'First learned in calm lakes, but quickly moved to rivers where the water has personality and demands respect.',
+        'Each paddle stroke is a conversation with the current — sometimes you lead, sometimes you follow.',
+        'Kayaking gets you into places that boats can\'t reach and feet can\'t walk.'
+      ],
+      stat: '200+ miles paddled',
+      images: [
+        { src: '/assets/images/adventurer/kayaking/20170707_165833.jpg', caption: 'Peaceful evening paddle on calm waters' },
+        { src: '/assets/images/adventurer/kayaking/IMG_1897.jpg', caption: 'Navigating through scenic waterways' },
+        { src: '/assets/images/adventurer/kayaking/IMG_6364.jpg', caption: 'River adventure - reading the current and finding the line' }
+      ]
+    }
+  };
+
+  // Travel location data
+  const locationData = {
+    'san-francisco': {
+      city: 'San Francisco, CA',
+      year: 'Home Base',
+      note: 'Where the adventure always begins and ends.'
+    },
+    'new-york': {
+      city: 'New York, NY',
+      year: '2023',
+      note: 'Urban exploration and rooftop views.'
+    },
+    'tokyo': {
+      city: 'Tokyo, Japan',
+      year: '2022',
+      note: 'Incredible blend of tradition and innovation.'
+    },
+    'london': {
+      city: 'London, UK',
+      year: '2023',
+      note: 'Rainy days and incredible museums.'
+    },
+    'sydney': {
+      city: 'Sydney, Australia',
+      year: '2021',
+      note: 'Harbor bridge climb and world-class diving.'
+    },
+    'reykjavik': {
+      city: 'Reykjavik, Iceland',
+      year: '2022',
+      note: 'Northern lights and geothermal adventures.'
+    },
+    'cairo': {
+      city: 'Cairo, Egypt',
+      year: '2020',
+      note: 'Ancient wonders and chaotic beauty.'
+    },
+    'rio': {
+      city: 'Rio de Janeiro, Brazil',
+      year: '2019',
+      note: 'Paragliding off Christ the Redeemer.'
+    }
+  };
+
+  // Badge interactions
+  const badgeCards = document.querySelectorAll('.badge-card');
+  const badgeDetails = document.getElementById('badge-details');
+  const badgeTitle = document.getElementById('badge-title');
+  const badgeStory = document.getElementById('badge-story');
+  const badgeStat = document.getElementById('badge-stat');
+  const closeBadge = document.getElementById('close-badge');
+
+  badgeCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const badgeType = this.getAttribute('data-badge');
+      const data = badgeData[badgeType];
+      
+      if (data) {
+        // Update content
+        badgeTitle.textContent = data.title;
+        badgeStory.innerHTML = data.story.map(p => `<p>${p}</p>`).join('');
+        badgeStat.textContent = data.stat;
+        
+        // Update images
+        const badgeImagesContainer = document.getElementById('badge-images');
+        if (data.images && data.images.length > 0) {
+          badgeImagesContainer.className = 'badge-images';
+          badgeImagesContainer.innerHTML = data.images.map((imageData, index) => 
+            `<div class="image-container">
+              <img src="${imageData.src}" 
+                   alt="${data.title} adventure photo" 
+                   class="adventure-image" 
+                   data-lightbox-group="${badgeType}"
+                   data-lightbox-src="${imageData.src}"
+                   data-lightbox-caption="${imageData.caption}">
+              <div class="image-caption">${imageData.caption}</div>
+            </div>`
+          ).join('');
+          
+          // Re-attach lightbox to new images
+          if (window.lightbox) {
+            window.lightbox.attachTriggers();
+          }
+        } else {
+          badgeImagesContainer.className = 'badge-images no-images';
+          badgeImagesContainer.innerHTML = '';
+        }
+        
+        // Show details section
+        badgeDetails.style.display = 'block';
+        badgeDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // Update active state
+        badgeCards.forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+
+  closeBadge.addEventListener('click', function() {
+    badgeDetails.style.display = 'none';
+    badgeCards.forEach(c => c.classList.remove('active'));
+  });
+
+  // Map pin interactions
+  const mapPins = document.querySelectorAll('.map-pin');
+  const tooltip = document.getElementById('location-tooltip');
+  const tooltipCity = document.getElementById('tooltip-city');
+  const tooltipYear = document.getElementById('tooltip-year');
+  const tooltipNote = document.getElementById('tooltip-note');
+
+  mapPins.forEach(pin => {
+    pin.addEventListener('mouseenter', function(e) {
+      const location = this.getAttribute('data-location');
+      const data = locationData[location];
+      
+      if (data) {
+        tooltipCity.textContent = data.city;
+        tooltipYear.textContent = data.year;
+        tooltipNote.textContent = data.note;
+        
+        tooltip.style.display = 'block';
+        tooltip.style.left = e.pageX + 10 + 'px';
+        tooltip.style.top = e.pageY - 50 + 'px';
+      }
+    });
+
+    pin.addEventListener('mouseleave', function() {
+      tooltip.style.display = 'none';
+    });
+
+    pin.addEventListener('mousemove', function(e) {
+      tooltip.style.left = e.pageX + 10 + 'px';
+      tooltip.style.top = e.pageY - 50 + 'px';
+    });
+  });
+
+});
+</script>
