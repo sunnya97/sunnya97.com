@@ -219,7 +219,19 @@ class CustomTravelMap {
 
   // Add markers to the map
   addMarkers() {
-    this.locations.forEach(location => {
+    // Add visited locations first (so they appear below lived locations)
+    this.locations.filter(location => location.type === 'visited').forEach(location => {
+      this.createMarker(location);
+    });
+    
+    // Add lived locations second (so they appear above visited locations)
+    this.locations.filter(location => location.type === 'lived').forEach(location => {
+      this.createMarker(location);
+    });
+  }
+
+  // Create individual marker
+  createMarker(location) {
       // Create custom marker element
       const markerElement = document.createElement('div');
       markerElement.className = 'custom-marker';
@@ -268,7 +280,6 @@ class CustomTravelMap {
       markerElement.addEventListener('mouseleave', () => {
         marker.getPopup().remove();
       });
-    });
   }
 
   // Destroy the map
