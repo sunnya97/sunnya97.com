@@ -6,6 +6,7 @@ title: Adventurer
 <link rel="stylesheet" href="/assets/css/lightbox.css">
 <script src="/assets/js/lightbox.js"></script>
 <script src="/assets/js/photo-grid.js"></script>
+<script src="/assets/js/modal.js"></script>
 <script src="/assets/js/adventure-components.js"></script>
 <script src="/assets/js/custom-travel-map.js"></script>
 
@@ -29,7 +30,7 @@ title: Adventurer
 
   <section class="merit-badges-section">
     <div class="content">
-      <h2 class="section-title">Merit Badges</h2>
+      <h2 class="section-title">Things I Enjoy</h2>
       
       <div class="badges-grid">
         <div class="badge-card" data-activity="flying">
@@ -60,14 +61,14 @@ title: Adventurer
           <h3 class="badge-name">Scuba Diving</h3>
         </div>
         
-        <div class="badge-card" data-activity="sailing">
+        <div class="badge-card" data-activity="sailing" style="display: none;">
           <div class="badge-icon">
             <img src="/assets/merit_badges/sailing.webp" alt="Sailing Merit Badge" class="badge-image">
           </div>
           <h3 class="badge-name">Sailing</h3>
         </div>
         
-        <div class="badge-card" data-activity="paramotoring">
+        <div class="badge-card" data-activity="paramotoring" style="display: none;">
           <div class="badge-icon">
             <img src="/assets/merit_badges/paramotor.png" alt="Paramotoring Merit Badge" class="badge-image">
           </div>
@@ -93,111 +94,103 @@ title: Adventurer
 
   <!-- Flying Activity Section -->
   <section class="activity-section" id="activity-flying" style="display: none;">
-    <div class="activity-content">
-      <div class="activity-header">
-        <h3 class="activity-title">Flying</h3>
-        <div class="activity-stat">127 flight hours logged</div>
-        <div class="activity-description">
-          Started with a discovery flight that changed everything. The moment the plane lifted off, I knew I had to learn to control this machine.
+    <div class="activity-modal">
+      <div class="activity-content">
+        <div class="activity-header">
+          <h3 class="activity-title">Flying</h3>
+          <div class="activity-stat">127 flight hours logged</div>
+          <div class="activity-description">
+          </div>
         </div>
-      </div>
-      
-      <div class="activity-story">
-        <p>Earned my private pilot license flying Cessnas out of small airports. There's something pure about reading the wind, watching the instruments, and navigating by sight.</p>
-        <p>Now I fly whenever I can — for the perspective it gives, the focus it demands, and the reminder that humans really can soar.</p>
-      </div>
+        
+        <div class="activity-story">
+          <p>Flying is one of the most ancient human dreams. And only in the last century or so did it go from fantasy to reality. So once I realized I could actually learn to fly, it felt almost irresponsible not to. I started training in Florida and Pennsylvania and have logged about 30 hours so far, mostly in Cessna 172s and 152s. I'm working toward my private pilot certificate and plan to go further: earn an instrument rating, maybe own my own plane one day, pick up a seaplane add-on, and eventually fly bush planes out into the wilderness to camp in places with no roads, just sky and forest.</p>
+          <p>It's a bit embarrassing to admit, but what originally opened my eyes to flying was <a href="https://www.youtube.com/watch?v=3OULGcSWoAc&ab_channel=JayS" target="_blank">a scene in the Fifty Shades of Grey trailer</a> that left an impression. Of course, I later learned that scene was actually in a glider — not an airplane — but by then it was too late. I was hooked. Flying is equal parts a useful skill, a way of experiencing true freedom, and a portal into a whole new frontier of adventure.</p>
+        </div>
 
-      <div class="photo-grid-container" id="flying-photos"></div>
+        <div class="photo-grid-container" id="flying-photos"></div>
+      </div>
+      <button class="close-activity" onclick="closeActivity()">×</button>
     </div>
-    <button class="close-activity" onclick="closeActivity()">×</button>
   </section>
 
   <!-- Skydiving Activity Section -->
   <section class="activity-section" id="activity-skydiving" style="display: none;">
-    <div class="activity-content">
+    <div class="activity-modal">
+      <div class="activity-content">
       <div class="activity-header">
         <h3 class="activity-title">Skydiving</h3>
         <div class="activity-stat">6 jumps completed</div>
         <div class="activity-description">
-          First jump was a tandem that left me completely addicted to the rush. The moment of stepping out into nothing but air is unlike anything else.
         </div>
       </div>
       
       <div class="activity-story">
-        <p>Got my solo certification and started jumping regularly. Each jump teaches you something new about fear, trust, and letting go.</p>
-        <p>The freefall is just the beginning — under canopy is where you really learn to fly.</p>
+        <p>Skydiving is something I'm still pretty new to. I did my first tandem jump a few years ago, but I really started taking it seriously after getting a vacation place in the Poconos. I picked the spot because it was across the street from a little airport I could fly out of. As it turned out, that same airport also had a skydiving center, and before long, I became friends with the instructors. We'd hang out on the weekends, and every time they'd ask, "So when are you going to learn to skydive?" Eventually I figured they were right. I should.</p>
+        <p>So far I've done six jumps and I'm currently working my way through the AFF course. I've done two solos and have mostly been jumping around New Jersey and Pennsylvania. Right now, it's not even about the view. I'm still too focused to look around. It's about the raw adrenaline and the jolt of aliveness that hits the moment you step out of the plane. And it's about something deeper too. Each jump is a personal test, a practice in overcoming fear. Even now, I still get nervous standing at the edge of the door. But I do it anyway. And when my feet touch the ground, there's this unmistakable feeling — not just of survival, but of bravery earned in real time.</p>
       </div>
 
-      <div class="photo-grid-container" id="skydiving-photos"></div>
+        <div class="photo-grid-container" id="skydiving-photos"></div>
+      </div>
+      <button class="close-activity" onclick="closeActivity()">×</button>
     </div>
-    <button class="close-activity" onclick="closeActivity()">×</button>
   </section>
 
   <!-- Motorcycling Activity Section -->
   <section class="activity-section" id="activity-motorcycling" style="display: none;">
-    <div class="activity-content">
+    <div class="activity-modal">
+      <div class="activity-content">
       <div class="activity-header">
         <h3 class="activity-title">Motorcycling</h3>
         <div class="activity-stat">15,000+ miles ridden</div>
         <div class="activity-description">
-          Started on back roads, learning to lean into turns and read the asphalt like a book. Every ride is a meditation in motion.
         </div>
       </div>
       
       <div class="activity-story">
-        <p>Took my first long-distance trip across state lines — just me, the bike, and hundreds of miles of open road ahead.</p>
-        <p>Motorcycling strips away everything unnecessary. It's pure connection between human, machine, and the road.</p>
+        <p>I started riding motorcycles in 2018, back when I was living in San Francisco. The way I got into it is kind of funny. I was deep down a rabbit hole researching van life, dreaming about traveling to every U.S. national park in a van. At some point I thought, "Wouldn't it be cool if I could carry a motorcycle in the van to explore each park more easily?" (Yes, I know how silly that sounds now.) That thought led me to a bunch of motorcycle YouTube videos, which quickly turned into an obsession. Before long, I had a Ninja 400 and was riding across the Bay Bridge with the wind in my face and the skyline behind me.</p>
+        <p>Some of my favorite rides have been simple ones. Crossing from San Francisco to Berkeley at sunset was always its own kind of magic. But I've also taken bikes through the mountains of Medellín and up into the high-altitude roads of Ladakh, India. What draws me to motorcycling is mostly the adrenaline and the thrill. There's something raw about it. Your body is exposed to the world, your senses are alive, and your attention is completely present. You can actually feel the movement in a way you just never can in a car.</p>
       </div>
 
-      <div class="stat-grid">
-        <div class="stat-item">
-          <div class="stat-value">4</div>
-          <div class="stat-label">Countries Ridden</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">2</div>
-          <div class="stat-label">Bikes Owned</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">15k+</div>
-          <div class="stat-label">Miles Logged</div>
-        </div>
-      </div>
 
-      <div class="photo-grid-container" id="motorcycling-photos"></div>
+        <div class="photo-grid-container" id="motorcycling-photos"></div>
+      </div>
+      <button class="close-activity" onclick="closeActivity()">×</button>
     </div>
-    <button class="close-activity" onclick="closeActivity()">×</button>
   </section>
 
   <!-- Scuba Diving Activity Section -->
   <section class="activity-section" id="activity-scuba" style="display: none;">
-    <div class="activity-content">
+    <div class="activity-modal">
+      <div class="activity-content">
       <div class="activity-header">
         <h3 class="activity-title">Scuba Diving</h3>
         <div class="activity-stat">28 dives across 3 countries</div>
         <div class="activity-description">
-          First dive was in murky lake water, but even that glimpse of the underwater world was enough to hook me completely.
         </div>
       </div>
       
       <div class="activity-story">
-        <p>Got certified in tropical waters where the visibility stretched forever and the marine life was abundant.</p>
-        <p>Every dive is exploration of an alien world that exists right here on our planet.</p>
+        <p>I've been scuba diving since I was 14. I've probably done over 50 dives (though I do a really bad job of maintaining a logbook), in environments ranging from tropical islands to literal ice water. I'm currently Open Water certified and working on my Advanced Open Water.</p>
+        <p>Some of my favorite dives have been at Molokini Crater in Hawaii, gliding alongside manta rays in Bali, descending into the surreal freshwater cave systems of the Cenotes near Tulum, and sinking into the depths of the Blue Hole in Belize. That one stuck with me — it felt so deep and so dark that, for a moment, I felt like I was floating in the void.</p>
+        <p>What draws me back every time is the weightlessness and the deep, almost meditative serenity of being underwater. It's like stepping into an alien world, where light bends differently, time slows down, and your entire field of attention narrows to the quiet rhythm of your breath.</p>
+        <p>Sometimes I just like to lay back and watch the bubbles rise, drifting slowly toward the surface. Down there, everything is unfamiliar. Things that look hard are actually soft, and things that look soft are hard (yes, yes, I know I shouldn't be touching stuff). But it's that sense of wonder, of immersion in a completely different kind of reality, that makes diving feel like more than just a sport. It's a practice in presence, a reconnection with the natural world, and a kind of stillness I haven't found anywhere else.</p>
       </div>
 
-      <div class="photo-grid-container" id="scuba-photos"></div>
+        <div class="photo-grid-container" id="scuba-photos"></div>
+      </div>
+      <button class="close-activity" onclick="closeActivity()">×</button>
     </div>
-    <button class="close-activity" onclick="closeActivity()">×</button>
   </section>
 
   <!-- Sailing Activity Section -->
   <section class="activity-section" id="activity-sailing" style="display: none;">
-    <div class="activity-content">
+    <div class="activity-modal">
+      <div class="activity-content">
       <div class="activity-header">
         <h3 class="activity-title">Sailing</h3>
         <div class="activity-stat">12 multi-day sailing trips</div>
         <div class="activity-description">
-          Learned to read the wind and work with forces much bigger than myself. Sailing teaches patience and respect for nature.
         </div>
       </div>
       
@@ -206,19 +199,20 @@ title: Adventurer
         <p>Each sailing trip is a lesson in self-reliance, weather reading, and finding your way by the stars.</p>
       </div>
 
-      <div class="photo-grid-container" id="sailing-photos"></div>
+        <div class="photo-grid-container" id="sailing-photos"></div>
+      </div>
+      <button class="close-activity" onclick="closeActivity()">×</button>
     </div>
-    <button class="close-activity" onclick="closeActivity()">×</button>
   </section>
 
   <!-- Paramotoring Activity Section -->
   <section class="activity-section" id="activity-paramotoring" style="display: none;">
-    <div class="activity-content">
+    <div class="activity-modal">
+      <div class="activity-content">
       <div class="activity-header">
         <h3 class="activity-title">Paramotoring</h3>
         <div class="activity-stat">8 training flights completed</div>
         <div class="activity-description">
-          Discovered this sport as the closest thing to being a bird — just you, a wing, and a motor strapped to your back.
         </div>
       </div>
       
@@ -227,98 +221,187 @@ title: Adventurer
         <p>Flying low and slow gives you a completely different perspective than traditional aviation.</p>
       </div>
 
-      <div class="coming-soon">
-        <p style="text-align: center; color: var(--text-muted); font-style: italic;">Photos coming soon...</p>
+        <div class="coming-soon">
+          <p style="text-align: center; color: var(--text-muted); font-style: italic;">Photos coming soon...</p>
+        </div>
       </div>
+      <button class="close-activity" onclick="closeActivity()">×</button>
     </div>
-    <button class="close-activity" onclick="closeActivity()">×</button>
   </section>
 
   <!-- Skiing Activity Section -->
   <section class="activity-section" id="activity-skiing" style="display: none;">
-    <div class="activity-content">
+    <div class="activity-modal">
+      <div class="activity-content">
       <div class="activity-header">
         <h3 class="activity-title">Skiing</h3>
         <div class="activity-stat">25+ days on the mountain</div>
         <div class="activity-description">
-          First learned on the bunny slopes, falling more than skiing, but gradually found my rhythm on the mountain.
         </div>
       </div>
       
       <div class="activity-story">
-        <p>There's something magical about carving turns down a mountain with fresh powder flying behind you.</p>
-        <p>Skiing teaches you to read terrain, respect nature's power, and find flow in challenging conditions.</p>
+        <p>I got into skiing around high school, but really started falling in love with it during college. Even now, my college roommate and I still try to take ski trips whenever we can. I mostly stick to resorts and have been lucky to ski in some incredible places over the years. Some of my favorites are Niseko in Japan, Aspen in Colorado, and Banff up in the Canadian Rockies.</p>
+        <p>I wouldn't call myself an advanced skier, but I can handle black diamonds at most resorts. As for double blacks… I've done a few, but usually just once. For me, those are solidly in the category of type 2 fun — more about surviving than carving. What I really love is the range skiing offers. There's the adrenaline rush of fast descents and technical terrain, but also the calm that comes with gliding through quiet glades. Sometimes the best part of the day is just cruising down a wide green trail, taking in the scenery.</p>
+        <p>Lately I've started learning to snowboard too. I'm still very much a beginner, but it's been fun to approach the mountain from a new angle, even if that angle mostly involves falling.</p>
       </div>
 
-      <div class="photo-grid-container" id="skiing-photos"></div>
+        <div class="photo-grid-container" id="skiing-photos"></div>
+      </div>
+      <button class="close-activity" onclick="closeActivity()">×</button>
     </div>
-    <button class="close-activity" onclick="closeActivity()">×</button>
   </section>
 
   <!-- Kayaking Activity Section -->
   <section class="activity-section" id="activity-kayaking" style="display: none;">
-    <div class="activity-content">
+    <div class="activity-modal">
+      <div class="activity-content">
       <div class="activity-header">
         <h3 class="activity-title">Kayaking</h3>
         <div class="activity-stat">200+ miles paddled</div>
         <div class="activity-description">
-          First learned in calm lakes, but quickly moved to rivers where the water has personality and demands respect.
         </div>
       </div>
       
       <div class="activity-story">
-        <p>Each paddle stroke is a conversation with the current — sometimes you lead, sometimes you follow.</p>
-        <p>Kayaking gets you into places that boats can't reach and feet can't walk.</p>
+        <p>Kayaking is a bit different from most of my other adventures. It's quieter, calmer, and less of what people would call high-adrenaline, but it's still something I absolutely love. I've done all kinds of watercrafting over the years, from rafting to canoeing, but there's something uniquely satisfying about the simplicity and control of a single kayak. I want to go left, I go left. I want to go right, I go right. It's just me and the water, and that sense of total self-reliance feels incredibly freeing.</p>
+        <p>I got into kayaking when I was young, mostly through Boy Scouts, and since then I've paddled through still lakes, river rapids, and open ocean, loving everything from the rush of whitewater to the slow, steady glide through winding mangrove tunnels. One of my most memorable moments wasn't about the destination at all. A close friend and I once spent hours drifting across a lake, just paddling and talking, completely immersed in the moment. And best of all, <a href="https://xkcd.com/209/" target="_blank">they can even travel through time</a>.</p>
       </div>
 
-      <div class="photo-grid-container" id="kayaking-photos"></div>
+        <div class="photo-grid-container" id="kayaking-photos"></div>
+      </div>
+      <button class="close-activity" onclick="closeActivity()">×</button>
     </div>
-    <button class="close-activity" onclick="closeActivity()">×</button>
   </section>
 
   <section class="travel-map-section">
     <div class="content">
-      <h2 class="section-title">Travel Map</h2>
+      <h2 class="section-title">Travels</h2>
+      <p class="travel-intro">
+        I'm fortunate enough to have gotten the opportunity to explore many corners of the world, both for work and pleasure. Red dots show everywhere I've been. Green dots mark places I've lived long enough to call home (subjective, but whatever feels like home to me).
+      </p>
       
       <div class="map-container">
         <div id="custom-map" style="width: 100%; height: 500px; border-radius: 12px; border: 2px solid rgba(212, 175, 55, 0.3); overflow: hidden;"></div>
-        <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
-          MapLibre GL JS | © OpenStreetMap contributors
-        </p>
+      </div>
+
+      <div class="map-quote-section">
+        <div class="quote-container">
+          <p class="map-quote">"The map is not the territory."</p>
+          <span class="quote-author">— Alfred Korzybski</span>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="quests-section">
     <div class="content">
-      <h2 class="section-title">Quests</h2>
+      <h2 class="section-title">Open Quests</h2>
+      <p class="quest-intro">
+        These are the adventures still calling to me. Some require years of preparation, others just the right moment. Each represents a boundary I want to cross, a skill I want to master, or a perspective I want to gain. The list evolves, but the drive to explore never stops.
+      </p>
       
-      <div class="quests-list">
-        <div class="quest-card">
-          <div class="quest-status in-progress">In Progress</div>
-          <h3 class="quest-title">Visit all U.S. National Parks</h3>
-          <p class="quest-description">
-            Slowly exploring every major landscape in the country — one park at a time.
-          </p>
-          <div class="quest-progress">
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 35%;"></div>
+      <!-- Game-style Quest Log -->
+      <div class="quest-log">
+        <div class="quest-log-container">
+          <div class="quest-entry active">
+            <div class="quest-marker">📍</div>
+            <div class="quest-content">
+              <div class="quest-name">Visit Every U.S. National Park</div>
+              <div class="quest-type">Land</div>
             </div>
-            <span class="progress-text">22 of 63 parks</span>
+            <div class="quest-status-badge active">Active</div>
           </div>
-        </div>
-        
-        <div class="quest-card">
-          <div class="quest-status someday">Someday</div>
-          <h3 class="quest-title">Hike the Appalachian Trail</h3>
-          <p class="quest-description">
-            A 2,190-mile walk through 14 states — part pilgrimage, part reset button.
-          </p>
-          <div class="quest-progress">
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 0%;"></div>
+
+          <div class="quest-entry available">
+            <div class="quest-marker">🥾</div>
+            <div class="quest-content">
+              <div class="quest-name">Hike the Appalachian Trail</div>
+              <div class="quest-type">Land</div>
             </div>
-            <span class="progress-text">2,190 miles to go</span>
+            <div class="quest-status-badge available">Available</div>
+          </div>
+
+          <div class="quest-entry available">
+            <div class="quest-marker">⛵</div>
+            <div class="quest-content">
+              <div class="quest-name">Sail Across an Ocean</div>
+              <div class="quest-type">Water</div>
+            </div>
+            <div class="quest-status-badge available">Available</div>
+          </div>
+
+
+          <div class="quest-entry available">
+            <div class="quest-marker">🪂</div>
+            <div class="quest-content">
+              <div class="quest-name">Fly in a Wingsuit</div>
+              <div class="quest-type">Air</div>
+            </div>
+            <div class="quest-status-badge available">Available</div>
+          </div>
+
+          <div class="quest-entry available">
+            <div class="quest-marker">🛩️</div>
+            <div class="quest-content">
+              <div class="quest-name">Fly a Seaplane</div>
+              <div class="quest-type">Air</div>
+            </div>
+            <div class="quest-status-badge available">Available</div>
+          </div>
+
+          <div class="quest-entry available">
+            <div class="quest-marker">🎈</div>
+            <div class="quest-content">
+              <div class="quest-name">Learn to Fly a Hot Air Balloon</div>
+              <div class="quest-type">Air</div>
+            </div>
+            <div class="quest-status-badge available">Available</div>
+          </div>
+
+          <div class="quest-entry available">
+            <div class="quest-marker">🪁</div>
+            <div class="quest-content">
+              <div class="quest-name">Learn to Hang Glide</div>
+              <div class="quest-type">Air</div>
+            </div>
+            <div class="quest-status-badge available">Available</div>
+          </div>
+
+          <div class="quest-entry available">
+            <div class="quest-marker">🚀</div>
+            <div class="quest-content">
+              <div class="quest-name">Go to Space</div>
+              <div class="quest-type">Air</div>
+            </div>
+            <div class="quest-status-badge available">Available</div>
+          </div>
+
+          <div class="quest-entry available">
+            <div class="quest-marker">🐫</div>
+            <div class="quest-content">
+              <div class="quest-name">Overland the Silk Road</div>
+              <div class="quest-type">Land</div>
+            </div>
+            <div class="quest-status-badge available">Available</div>
+          </div>
+
+          <div class="quest-entry available">
+            <div class="quest-marker">🚁</div>
+            <div class="quest-content">
+              <div class="quest-name">Learn to Fly a Helicopter</div>
+              <div class="quest-type">Air</div>
+            </div>
+            <div class="quest-status-badge available">Available</div>
+          </div>
+
+          <div class="quest-entry available">
+            <div class="quest-marker">🛶</div>
+            <div class="quest-content">
+              <div class="quest-name">Travel through North America by River</div>
+              <div class="quest-type">Water</div>
+            </div>
+            <div class="quest-status-badge available">Available</div>
           </div>
         </div>
       </div>
@@ -435,25 +518,9 @@ title: Adventurer
   margin: 0;
 }
 
-/* Activity Sections */
+/* Activity Sections - Hidden by default, content used by modal */
 .activity-section {
-  background: rgba(212, 175, 55, 0.1);
-  border: 2px solid var(--primary-color);
-  border-radius: 12px;
-  margin: 2rem 0;
-  position: relative;
-  animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  display: none;
 }
 
 .activity-content {
@@ -535,18 +602,6 @@ title: Adventurer
   margin-top: 2rem;
 }
 
-.close-activity {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: var(--primary-color);
-  cursor: pointer;
-  padding: 0.5rem;
-  line-height: 1;
-}
 
 .coming-soon {
   text-align: center;
@@ -560,6 +615,41 @@ title: Adventurer
   padding: 4rem 0;
 }
 
+.travel-intro {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  text-align: left;
+  max-width: none;
+  margin: 0 0 3rem 0;
+}
+
+.map-quote-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.quote-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.map-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--primary-color);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.quote-author {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
 .map-container {
   position: relative;
   max-width: 1000px;
@@ -571,83 +661,143 @@ title: Adventurer
   background: rgba(212, 175, 55, 0.03);
 }
 
-.quests-list {
+.quest-intro {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+.quests-checklist {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  max-width: 800px;
+  gap: 0.5rem;
+  max-width: 500px;
   margin: 0 auto;
 }
 
-.quest-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(212, 175, 55, 0.3);
-  border-radius: 12px;
-  padding: 2.5rem;
-  position: relative;
+.quest-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
 }
 
-.quest-status {
-  position: absolute;
-  top: -1px;
-  right: 2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0 0 8px 8px;
+.quest-item:hover {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.quest-icon {
+  font-size: 1.5rem;
+  width: 24px;
+  text-align: center;
+}
+
+.quest-checkbox {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  width: 20px;
+  text-align: center;
+}
+
+.quest-checkbox.in-progress {
+  color: var(--primary-color);
+}
+
+.quest-title {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  flex: 1;
+}
+
+/* Game-style Quest Log */
+.quest-log-container {
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Courier New', monospace;
+}
+
+.quest-entry {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.quest-entry:hover {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.quest-entry.active {
+  background: rgba(76, 175, 80, 0.1);
+  border-left: 3px solid #4CAF50;
+}
+
+.quest-entry.available {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.quest-marker {
+  font-size: 1.2rem;
+  width: 30px;
+  text-align: center;
+  margin-right: 1rem;
+}
+
+.quest-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.quest-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.quest-type {
   font-size: 0.8rem;
-  font-weight: bold;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.quest-status.in-progress {
+
+.quest-status-badge {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+}
+
+.quest-status-badge.active {
   background: #4CAF50;
   color: white;
 }
 
-.quest-status.someday {
-  background: #FF9800;
-  color: white;
-}
-
-.quest-title {
-  font-size: 1.5rem;
-  font-weight: bold;
+.quest-status-badge.available {
+  background: rgba(212, 175, 55, 0.2);
   color: var(--primary-color);
-  margin: 0 0 1rem 0;
-}
-
-.quest-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-}
-
-.quest-progress {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.progress-bar {
-  flex: 1;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background: var(--primary-color);
-  transition: width 0.3s ease;
-}
-
-.progress-text {
-  font-size: 0.9rem;
-  color: var(--secondary-color);
-  font-weight: bold;
-  white-space: nowrap;
+  border: 1px solid rgba(212, 175, 55, 0.4);
 }
 
 @media (max-width: 900px) {
@@ -670,23 +820,35 @@ title: Adventurer
   .activity-content {
     padding: 2rem;
   }
+  
 }
 
 /* Simple marker styling without any positioning or hover effects */
 .custom-marker {
   pointer-events: auto;
 }
+
+/* Link styling for activity sections */
+.activity-story a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.activity-story a:hover {
+  color: var(--secondary-color);
+}
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Photo data for each activity
-  const photoData = {
+  // Photo data for each activity - make it globally accessible
+  window.photoData = {
     flying: [
       { src: '/assets/images/adventurer/flying/flying_jackie_first_flight.png', caption: 'First flight with Jackie' }
     ],
     skydiving: [
-      { src: '/assets/images/adventurer/skydiving/G0048678.JPG', caption: 'My first tandem skydive' }
+      { src: '/assets/images/adventurer/skydiving/G0048678.JPG', caption: 'My first tandem skydive' },
+      { src: '/assets/images/adventurer/skydiving/first_solo.png', caption: 'My first solo – moment of opening' }
     ],
     motorcycling: [
       { src: '/assets/images/adventurer/motorcycle/IMG_20191107_070406_264.jpg', caption: 'My Ninja 400' },
@@ -719,21 +881,9 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('click', function() {
       const activity = this.getAttribute('data-activity');
       showActivity(activity);
-      
-      // Load photos for this activity
-      if (photoData[activity]) {
-        const container = document.getElementById(`${activity}-photos`);
-        if (container) {
-          PhotoGrid.create(container, photoData[activity], {
-            groupName: activity,
-            columns: 'auto-fit',
-            minColumnWidth: '200px',
-            gap: '1rem'
-          });
-        }
-      }
     });
   });
+
 
   // Initialize custom map using the component
   setTimeout(() => {

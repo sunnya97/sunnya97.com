@@ -61,19 +61,44 @@ function createActivitySection(id, content) {
   `;
 }
 
+// Activity Modal Instance
+let activityModal = null;
+
 // Show/Hide Activity Functions
 function showActivity(activityId) {
-  // Hide all activities
-  document.querySelectorAll('.activity-section').forEach(section => {
-    section.style.display = 'none';
-  });
-  
-  // Show selected activity
+  // Get activity content
   const activity = document.getElementById(`activity-${activityId}`);
-  if (activity) {
-    activity.style.display = 'block';
-    activity.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!activity) return;
+  
+  // Extract content from the activity section
+  const activityContent = activity.querySelector('.activity-content');
+  if (!activityContent) return;
+  
+  // Create modal with activity-specific options
+  const modalOptions = {};
+  
+  // Special handling for content-heavy activities
+  if (activityId === 'scuba' || activityId === 'motorcycling') {
+    modalOptions.maxHeight = '75vh';
   }
+  
+  // Create modal if it doesn't exist or recreate with new options
+  if (!activityModal) {
+    activityModal = new Modal(modalOptions);
+  } else if (modalOptions.maxHeight) {
+    // If we need special height, create a new modal instance
+    activityModal.destroy();
+    activityModal = new Modal(modalOptions);
+  }
+  
+  // Clone the content to avoid moving it from the original location
+  const contentClone = activityContent.cloneNode(true);
+  
+  // Open modal with activity content
+  activityModal.open(contentClone);
+  
+  // Load photos for this activity in the modal
+  loadActivityPhotos(activityId, contentClone);
   
   // Update badge states
   document.querySelectorAll('.badge-card').forEach(badge => {
@@ -82,11 +107,29 @@ function showActivity(activityId) {
   document.querySelector(`[data-activity="${activityId}"]`)?.classList.add('active');
 }
 
+// Function to load photos for an activity
+function loadActivityPhotos(activityId, containerElement) {
+  // Get photo data from the main page (now globally accessible)
+  if (typeof window.photoData !== 'undefined' && window.photoData[activityId]) {
+    const photoContainer = containerElement.querySelector(`#${activityId}-photos`);
+    
+    if (photoContainer && typeof PhotoGrid !== 'undefined') {
+      PhotoGrid.create(photoContainer, window.photoData[activityId], {
+        groupName: activityId,
+        columns: 'auto-fit',
+        minColumnWidth: '200px',
+        gap: '1rem'
+      });
+    }
+  }
+}
+
 function closeActivity() {
-  document.querySelectorAll('.activity-section').forEach(section => {
-    section.style.display = 'none';
-  });
+  if (activityModal && activityModal.isOpen) {
+    activityModal.close();
+  }
   
+  // Reset badge states
   document.querySelectorAll('.badge-card').forEach(badge => {
     badge.classList.remove('active');
   });
