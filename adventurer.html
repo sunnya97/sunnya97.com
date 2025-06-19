@@ -298,110 +298,144 @@ title: Adventurer
     <div class="content">
       <h2 class="section-title">Open Quests</h2>
       <p class="quest-intro">
-        These are the adventures still calling to me. Some require years of preparation, others just the right moment. Each represents a boundary I want to cross, a skill I want to master, or a perspective I want to gain. The list evolves, but the drive to explore never stops.
+        Some adventures are spontaneous, but others live in the back of your mind for years. This is my running list of open quests: places I want to go, things I want to do, and challenges I want to take on. Some are big, some are small. I probably won't finish them all, but that's not really the point. This is my personal side quest log, and I intend to chip away at it one adventure at a time.
       </p>
       
       <!-- Game-style Quest Log -->
       <div class="quest-log">
+        <!-- Quest Filters as Tabs -->
+        <div class="quest-tabs">
+          <button class="quest-tab active" data-filter="all">All</button>
+          <button class="quest-tab" data-filter="air">Air</button>
+          <button class="quest-tab" data-filter="water">Water</button>
+          <button class="quest-tab" data-filter="land">Land</button>
+        </div>
+        
         <div class="quest-log-container">
-          <div class="quest-entry active">
+          <div class="quest-entry active" data-category="land">
             <div class="quest-marker">📍</div>
             <div class="quest-content">
               <div class="quest-name">Visit Every U.S. National Park</div>
               <div class="quest-type">Land</div>
             </div>
-            <div class="quest-status-badge active">Active</div>
+            <div class="quest-status-badge active">In Progress</div>
           </div>
 
-          <div class="quest-entry available">
+          <div class="quest-entry active" data-category="water">
+            <div class="quest-marker">⛵</div>
+            <div class="quest-content">
+              <div class="quest-name">Learn to Sail</div>
+              <div class="quest-type">Water</div>
+            </div>
+            <div class="quest-status-badge active">In Progress</div>
+          </div>
+
+          <div class="quest-entry active" data-category="air">
+            <div class="quest-marker">🪂</div>
+            <div class="quest-content">
+              <div class="quest-name">Learn to Paramotor</div>
+              <div class="quest-type">Air</div>
+            </div>
+            <div class="quest-status-badge active">In Progress</div>
+          </div>
+
+          <div class="quest-entry active" data-category="land">
+            <div class="quest-marker">🎿</div>
+            <div class="quest-content">
+              <div class="quest-name">Learn to Snowboard</div>
+              <div class="quest-type">Land</div>
+            </div>
+            <div class="quest-status-badge active">In Progress</div>
+          </div>
+
+          <div class="quest-entry available" data-category="land">
             <div class="quest-marker">🥾</div>
             <div class="quest-content">
               <div class="quest-name">Hike the Appalachian Trail</div>
               <div class="quest-type">Land</div>
             </div>
-            <div class="quest-status-badge available">Available</div>
+            <div class="quest-status-badge available">Todo</div>
           </div>
 
-          <div class="quest-entry available">
+          <div class="quest-entry available" data-category="water">
             <div class="quest-marker">⛵</div>
             <div class="quest-content">
               <div class="quest-name">Sail Across an Ocean</div>
               <div class="quest-type">Water</div>
             </div>
-            <div class="quest-status-badge available">Available</div>
+            <div class="quest-status-badge available">Todo</div>
           </div>
 
-
-          <div class="quest-entry available">
+          <div class="quest-entry available" data-category="air">
             <div class="quest-marker">🪂</div>
             <div class="quest-content">
               <div class="quest-name">Fly in a Wingsuit</div>
               <div class="quest-type">Air</div>
             </div>
-            <div class="quest-status-badge available">Available</div>
+            <div class="quest-status-badge available">Todo</div>
           </div>
 
-          <div class="quest-entry available">
+          <div class="quest-entry available" data-category="air">
             <div class="quest-marker">🛩️</div>
             <div class="quest-content">
               <div class="quest-name">Fly a Seaplane</div>
               <div class="quest-type">Air</div>
             </div>
-            <div class="quest-status-badge available">Available</div>
+            <div class="quest-status-badge available">Todo</div>
           </div>
 
-          <div class="quest-entry available">
+          <div class="quest-entry available" data-category="air">
             <div class="quest-marker">🎈</div>
             <div class="quest-content">
               <div class="quest-name">Learn to Fly a Hot Air Balloon</div>
               <div class="quest-type">Air</div>
             </div>
-            <div class="quest-status-badge available">Available</div>
+            <div class="quest-status-badge available">Todo</div>
           </div>
 
-          <div class="quest-entry available">
+          <div class="quest-entry available" data-category="air">
             <div class="quest-marker">🪁</div>
             <div class="quest-content">
               <div class="quest-name">Learn to Hang Glide</div>
               <div class="quest-type">Air</div>
             </div>
-            <div class="quest-status-badge available">Available</div>
+            <div class="quest-status-badge available">Todo</div>
           </div>
 
-          <div class="quest-entry available">
+          <div class="quest-entry available" data-category="air">
             <div class="quest-marker">🚀</div>
             <div class="quest-content">
               <div class="quest-name">Go to Space</div>
               <div class="quest-type">Air</div>
             </div>
-            <div class="quest-status-badge available">Available</div>
+            <div class="quest-status-badge available">Todo</div>
           </div>
 
-          <div class="quest-entry available">
+          <div class="quest-entry available" data-category="land">
             <div class="quest-marker">🐫</div>
             <div class="quest-content">
               <div class="quest-name">Overland the Silk Road</div>
               <div class="quest-type">Land</div>
             </div>
-            <div class="quest-status-badge available">Available</div>
+            <div class="quest-status-badge available">Todo</div>
           </div>
 
-          <div class="quest-entry available">
+          <div class="quest-entry available" data-category="air">
             <div class="quest-marker">🚁</div>
             <div class="quest-content">
               <div class="quest-name">Learn to Fly a Helicopter</div>
               <div class="quest-type">Air</div>
             </div>
-            <div class="quest-status-badge available">Available</div>
+            <div class="quest-status-badge available">Todo</div>
           </div>
 
-          <div class="quest-entry available">
+          <div class="quest-entry available" data-category="water">
             <div class="quest-marker">🛶</div>
             <div class="quest-content">
               <div class="quest-name">Travel through North America by River</div>
               <div class="quest-type">Water</div>
             </div>
-            <div class="quest-status-badge available">Available</div>
+            <div class="quest-status-badge available">Todo</div>
           </div>
         </div>
       </div>
@@ -667,9 +701,53 @@ title: Adventurer
   color: var(--text-muted);
   font-weight: 400;
   letter-spacing: 0.2px;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 3rem auto;
+  text-align: left;
+  max-width: none;
+  margin: 0 0 3rem 0;
+}
+
+/* Quest Tabs - Integrated into the widget */
+.quest-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.quest-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+
+.quest-tab:hover {
+  color: var(--primary-color);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.quest-tab.active {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--primary-color);
+}
+
+.quest-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary-color);
 }
 
 .quests-checklist {
@@ -720,13 +798,17 @@ title: Adventurer
 }
 
 /* Game-style Quest Log */
+.quest-log {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .quest-log-container {
   background: rgba(0, 0, 0, 0.2);
   border: 2px solid rgba(212, 175, 55, 0.3);
-  border-radius: 8px;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
   padding: 1.5rem;
-  max-width: 700px;
-  margin: 0 auto;
   font-family: 'Courier New', monospace;
 }
 
@@ -744,7 +826,6 @@ title: Adventurer
 }
 
 .quest-entry.active {
-  background: rgba(76, 175, 80, 0.1);
   border-left: 3px solid #4CAF50;
 }
 
@@ -884,6 +965,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+
+  // Quest filtering functionality
+  const questTabs = document.querySelectorAll('.quest-tab');
+  const questEntries = document.querySelectorAll('.quest-entry');
+
+  questTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const filterValue = this.getAttribute('data-filter');
+      
+      // Update active tab
+      questTabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter quest entries
+      questEntries.forEach(entry => {
+        const category = entry.getAttribute('data-category');
+        
+        if (filterValue === 'all' || category === filterValue) {
+          entry.style.display = 'flex';
+        } else {
+          entry.style.display = 'none';
+        }
+      });
+    });
+  });
 
   // Initialize custom map using the component
   setTimeout(() => {
